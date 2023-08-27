@@ -28,3 +28,39 @@ def CreateCourse(req):
             return JsonResponse({"msg": "Invalid Json format"}, status=401)
     else:
         return JsonResponse({"msg": "Invalid request"}, status=405)
+
+
+def getallCourse(req):
+    if (req.method == "GET"):
+        course_data = []
+        data = Course.objects.all().select_related("instructor")
+        for item in data:
+            instructors = {
+                "id": item.instructor.id,
+                "username": item.instructor.username
+            }
+            obj = {
+                "id": item.id,
+                'title': item.title,
+                "description": item.description,
+                "instructor": instructors
+            }
+            course_data.append(obj)
+
+        return JsonResponse({"data": course_data})
+    else:
+        return JsonResponse({"msg": "Invalid request"}, status=405)
+
+
+def getCourseByID(req, courseID):
+    if (req.method == "GET"):
+        courcedata = Course.objects.get(id=courseID)
+
+        obj = {
+            "id": courcedata.id,
+            "title": courcedata.title,
+            "description": courcedata.description
+        }
+        return JsonResponse(obj)
+    else:
+        return JsonResponse({"msg": "Invalid Request"}, status=405)
