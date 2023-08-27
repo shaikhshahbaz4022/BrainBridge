@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     "corsheaders",
     "user_routes",
     'course_route',
-    "enrol_routes"
+    "enrol_routes",
+    "assignment_routes"
 
 
 ]
