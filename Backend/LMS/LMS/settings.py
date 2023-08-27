@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     "corsheaders",
     "user_routes",
-    'course_route'
+    'course_route',
+    "enrol_routes"
 
 
 ]
