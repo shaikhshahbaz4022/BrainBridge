@@ -4,6 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.hashers import make_password
 from django.contrib.auth import authenticate, login, logout
+
 import json
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -13,18 +14,18 @@ User = get_user_model()
 def Register(request):
     if request.method == "POST":
         body = json.loads(request.body)
-        username = body['username']
-        email = body['email']
-        password = body['password']
+        username = body.get("username")
+        email = body.get("email")
+        password = body.get("password")
+        role = body.get("role", "student")
 
-        # Check if a user with the provided email already exists
         is_user_present = User.objects.filter(email=email).exists()
         if is_user_present:
             return JsonResponse({"msg": "User already present"})
         else:
             hashed_pass = make_password(password)
             user = User.objects.create(
-                username=username, email=email, password=hashed_pass)
+                username=username, role=role, email=email, password=hashed_pass)
             return JsonResponse({"msg": "Registration Successful"})
     else:
         return JsonResponse({"msg": "Some error occurred"})
@@ -33,8 +34,8 @@ def Register(request):
 def Login(request):
     if request.method == "POST":
         body = json.loads(request.body)
-        email = body['email']
-        password = body['password']
+        email = body.get("email")
+        password = body.get("password")
         try:
             UserModel = User.objects.get(email=email)
             user = authenticate(email=email, password=password)
@@ -58,8 +59,3 @@ def get(request):
         return JsonResponse({"msg": "welcome"})
     else:
         return JsonResponse({"msg": "Login first"})
-
-
-def Logout(req):
-    logout(req)
-    return JsonResponse({"msg": "Logout succesfull"})
