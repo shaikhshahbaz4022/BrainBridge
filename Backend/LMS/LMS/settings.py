@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     "user_routes",
     'course_route',
     "enrol_routes",
-    "assignment_routes"
+    "assignment_routes",
+    "submission_routes"
 
 
 ]
