@@ -12,6 +12,10 @@ def createEnrol(req, courseID):
         if user.role == "student":
 
             course = Course.objects.get(id=courseID)
+            alreadyEnrolled = Enrollment.objects.filter(
+                student=user, course=courseID).exists()
+            if alreadyEnrolled:
+                return JsonResponse({"msg": "You Have Already Enrolled"})
             data = Enrollment.objects.create(
                 student=user, course=course
             )

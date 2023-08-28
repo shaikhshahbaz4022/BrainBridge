@@ -17,6 +17,9 @@ def CreateCourse(req):
             if not title or not description:
                 return JsonResponse({"msg": "Title or Desc Missing"})
             user = req.user
+            isCourseExists = Course.objects.filter(title=title).exists()
+            if isCourseExists:
+                return JsonResponse({"msg": "Course Already Exists"})
             if user.role == "instructor":
                 data = Course.objects.create(
                     instructor=user, title=title, description=description
