@@ -1,0 +1,33 @@
+<div class="bg-bc6c25 p-4">
+  <div class="flex items-center justify-between mr-10">
+    <div class="text-white text-xl under">Your Logo</div>
+    <div class="hidden md:flex md:items-center md:space-x-4">
+      <a href="#" class="text-white text-xl link_hover">Courses</a>
+      <a href="#" class="text-white text-xl">Home</a>
+      <a href="#" class="text-white text-xl">Enroll</a>
+      <a href="#" class="text-white text-xl">Submissions</a>
+      <a href="#" class="text-white text-xl">Assignments</a>
+    </div>
+    <div class="md:hidden">
+      <fa-icon
+        [icon]="mobileMenuIcon"
+        class="text-white text-xl cursor-pointer"
+        (click)="toggleMobileMenu()"
+      ></fa-icon>
+    </div>
+  </div>
+  <div *ngIf="isMobileMenuOpen" class="mt-4 md:hidden">
+    <div class="flex flex-col items-end">
+      <fa-icon
+        [icon]="closeIcon"
+        class="text-white text-xl cursor-pointer mb-4"
+        (click)="closeMobileMenu()"
+      ></fa-icon>
+      <a href="#" class="text-white p-2">Courses</a>
+      <a href="#" class="text-white p-2">Home</a>
+      <a href="#" class="text-white p-2">Enroll</a>
+      <a href="#" class="text-white p-2">Submissions</a>
+      <a href="#" class="text-white p-2">Assignments</a>
+    </div>
+  </div>
+</div>

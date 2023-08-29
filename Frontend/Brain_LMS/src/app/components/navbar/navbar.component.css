@@ -1,0 +1,19 @@
+.bg-bc6c25 {
+  background-color: #219ebc;
+}
+.link_hover:hover {
+  background-image: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 50%,
+    #fefae0 50%,
+    #fefae0 100%
+  );
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  padding: 1px 4px;
+  border-radius: 3px;
+  color: brown;
+  text-decoration: none;
+  transition: background-position 0.3s, color 0.3s;
+}
