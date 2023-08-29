@@ -1,3 +1,14 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+@import url("https://fonts.googleapis.com/css2?family=Mukta&family=Noto+Sans&display=swap");
+
+html,
+body {
+  font-family: "Mukta", sans-serif;
+  /* font-family: "Noto Sans", sans-serif; */
+}
+.common-border {
+  border: 1px solid black;
+}

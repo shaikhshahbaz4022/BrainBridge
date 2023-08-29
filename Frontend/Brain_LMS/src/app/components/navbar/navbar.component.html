@@ -1,17 +1,49 @@
-<div class="bg-bc6c25 p-4">
-  <div class="flex items-center justify-between mr-10">
-    <div class="text-white text-xl under">Your Logo</div>
-    <div class="hidden md:flex md:items-center md:space-x-4">
-      <a href="#" class="text-white text-xl link_hover">Courses</a>
-      <a href="#" class="text-white text-xl">Home</a>
-      <a href="#" class="text-white text-xl">Enroll</a>
-      <a href="#" class="text-white text-xl">Submissions</a>
-      <a href="#" class="text-white text-xl">Assignments</a>
+<div class="bg-bc6c25 p-4 shadow-lg">
+  <div class="flex items-center justify-between">
+    <div class="text-amber-950 font-bold text-xl w-1/12">
+      <img
+        class="cursor-pointer rounded-xl hover:shadow-xl"
+        src="../../../assets/BORCELLE (1).jpg"
+        alt="Error"
+      />
     </div>
+    <div class="relative">
+      <input
+        class="common-border rounded-xl py-2 px-20 pr-18 shadow-sm"
+        type="text"
+        placeholder="Search Courses"
+      />
+      <fa-icon
+        class="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer hover:text-lg hover:text-blue-950"
+        [icon]="search"
+      ></fa-icon>
+    </div>
+
+    <div
+      class="hidden md:flex md:items-center justify-evenly md:space-x-4 w-1/2"
+    >
+      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >Courses</a
+      >
+      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >Home</a
+      >
+      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >Dashboard</a
+      >
+
+      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >Assignments</a
+      >
+      <button class="button-hover ml-6 px-4 py-2 text-l rounded font-bold">
+        LOGIN
+      </button>
+    </div>
+
     <div class="md:hidden">
       <fa-icon
         [icon]="mobileMenuIcon"
-        class="text-white text-xl cursor-pointer"
+        class="text-amber-950 font-bold text-xl cursor-pointer"
         (click)="toggleMobileMenu()"
       ></fa-icon>
     </div>
@@ -20,14 +52,14 @@
     <div class="flex flex-col items-end">
       <fa-icon
         [icon]="closeIcon"
-        class="text-white text-xl cursor-pointer mb-4"
+        class="text-amber-950 font-bold text-xl cursor-pointer mb-4"
         (click)="closeMobileMenu()"
       ></fa-icon>
-      <a href="#" class="text-white p-2">Courses</a>
-      <a href="#" class="text-white p-2">Home</a>
-      <a href="#" class="text-white p-2">Enroll</a>
-      <a href="#" class="text-white p-2">Submissions</a>
-      <a href="#" class="text-white p-2">Assignments</a>
+      <a href="#" class="text-amber-950 font-bold p-2">Courses</a>
+      <a href="#" class="text-amber-950 font-bold p-2">Home</a>
+      <a href="#" class="text-amber-950 font-bold p-2">Dashboard</a>
+      <a href="#" class="text-amber-950 font-bold p-2">Login</a>
+      <a href="#" class="text-amber-950 font-bold p-2">Assignments</a>
     </div>
   </div>
 </div>
