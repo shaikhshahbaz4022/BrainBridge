@@ -1,0 +1,90 @@
+<section>
+  <div class="relative">
+    <div class="">
+      <img
+        class="flex mx-auto w-full"
+        src="https://img-c.udemycdn.com/notices/home_carousel_slide/image/f47cd402-a9fb-4411-ac3a-247085be113f.jpg"
+        alt="Error"
+      />
+    </div>
+    <div class="shadow bg-white py-10 px-10 absolute left-20 top-20">
+      <div>
+        <h1 class="font-bold font-serif text-2xl my-3">
+          Build ready-for-anything teams
+        </h1>
+        <p class="my-3 text-lg">
+          See why leading organizations choose to learn with Udemy Business.
+        </p>
+        <button
+          class="my-3 px-5 mt-6 py-3 font-semibold text-white cursor-pointer flex items-center bg-gray-700"
+        >
+          Learn More.&nbsp;<fa-icon [icon]="right"></fa-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-5">
+  <div class="mx-6">
+    <h1 class="text-2xl my-3 font-semibold">Earn Your Degree</h1>
+    <div
+      class="boxes-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4"
+    >
+      <div
+        *ngFor="let item of boxData"
+        class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
+      >
+        <div class="common-border rounded-md">
+          <img
+            class="w-full rounded-md"
+            [src]="item.image"
+            [alt]="item.companyName"
+          />
+        </div>
+        <h2 class="flex items-center text-xl font-bold my-2">
+          <img
+            class="w-8"
+            [src]="item.logo"
+            [alt]="item.companyName"
+          />&nbsp;&nbsp;
+          {{ item.companyName }}
+        </h2>
+        <h3 class="my-2">{{ item.courseName }}</h3>
+        <a class="hover:text-blue-600 underline" [href]="item.link">{{
+          item.linkName
+        }}</a>
+        <p class="my-2">{{ item.degree }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="mt-5">
+  <div class="mx-6">
+    <h1 class="text-2xl my-3 font-semibold">Most Popular Certificates</h1>
+    <div
+      class="boxes-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4"
+    >
+      <div
+        *ngFor="let item of certifications"
+        class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
+      >
+        <div class="common-border rounded-md">
+          <img
+            class="w-full rounded-md"
+            [src]="item.image"
+            [alt]="item.course"
+          />
+        </div>
+        <h2 class="flex items-center text-xl font-bold my-2">
+          <img class="w-8" [src]="item.logo" [alt]="item.type" />&nbsp;&nbsp;
+          {{ item.course }}
+        </h2>
+        <h3 class="my-2">{{ item.courseName }}</h3>
+        <a class="hover:text-blue-600 underline" [href]="item.link">{{
+          item.type
+        }}</a>
+        <p class="my-2">{{ item.type }}</p>
+      </div>
+    </div>
+  </div>
+</section>

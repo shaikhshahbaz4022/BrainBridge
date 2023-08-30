@@ -6,9 +6,10 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { BrandingComponent } from './components/branding/branding.component';
+import { BoxesComponent } from './components/boxes/boxes.component';
 
 @NgModule({
-  declarations: [AppComponent, NavbarComponent, HomePageComponent, BrandingComponent],
+  declarations: [AppComponent, NavbarComponent, HomePageComponent, BrandingComponent, BoxesComponent],
   imports: [BrowserModule, AppRoutingModule, FontAwesomeModule],
   providers: [],
   bootstrap: [AppComponent],
