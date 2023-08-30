@@ -13,7 +13,7 @@ def CreateCourse(req):
             body = json.loads(req.body)
             title = body.get("title")
             description = body.get("description")
-
+            image = body.get("image")
             if not title or not description:
                 return JsonResponse({"msg": "Title or Desc Missing"})
             user = req.user
@@ -22,7 +22,7 @@ def CreateCourse(req):
                 return JsonResponse({"msg": "Course Already Exists"})
             if user.role == "instructor":
                 data = Course.objects.create(
-                    instructor=user, title=title, description=description
+                    instructor=user, title=title, description=description,image=image
                 )
                 return JsonResponse({"msg": "Course Created Succesfully", "course_id": data.id}, status=201)
             else:
