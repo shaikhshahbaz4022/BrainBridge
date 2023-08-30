@@ -82,14 +82,13 @@ WSGI_APPLICATION = 'LMS.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
-DatabaseURL=config("DatabaseURL")
+DatabaseURL = config("DatabaseURL")
 DATABASES = {
     'default': dj_database_url.parse(
         DatabaseURL
-       
+
     )
 }
-
 
 
 AUTH_USER_MODEL = 'user_routes.User'
@@ -140,3 +139,5 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+# LOGIN_URL = '/accounts/login/'
+# CORS_ALLOW_CREDENTIALS = True

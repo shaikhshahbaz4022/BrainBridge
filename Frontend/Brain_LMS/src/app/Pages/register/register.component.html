@@ -1,0 +1,62 @@
+<div class="max-w-md mx-auto bg-white p-8 shadow-md rounded-md hover:shadow-lg">
+  <form [formGroup]="registerGroup" (submit)="OnSubmit()">
+    <div class="mb-4">
+      <label for="username" class="block text-gray-700 font-bold mb-2"
+        >Username:</label
+      >
+      <input
+        type="text"
+        id="username"
+        class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Username"
+        formControlName="username"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="email" class="block text-gray-700 font-bold mb-2"
+        >Email:</label
+      >
+      <input
+        type="email"
+        id="email"
+        class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Email"
+        formControlName="email"
+      />
+    </div>
+
+    <div class="mb-6">
+      <label for="password" class="block text-gray-700 font-bold mb-2"
+        >Password:</label
+      >
+      <input
+        type="password"
+        formControlName="password"
+        id="password"
+        class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+        placeholder="Enter Password"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label for="role" class="block text-gray-700 font-bold mb-2">Role:</label>
+      <select
+        formControlName="role"
+        id="role"
+        class="w-full border rounded-md py-2 px-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+        <option value="" disabled selected>Select a role</option>
+        <option value="student">Student</option>
+        <option value="instructor">Instructor</option>
+      </select>
+    </div>
+
+    <button
+      type="submit"
+      class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md transition duration-300"
+    >
+      Register
+    </button>
+  </form>
+</div>

@@ -6,7 +6,6 @@ from django.contrib.auth.decorators import login_required
 User = get_user_model()
 
 
-@login_required
 def CreateCourse(req):
     if req.method == "POST":
         try:
@@ -22,7 +21,7 @@ def CreateCourse(req):
                 return JsonResponse({"msg": "Course Already Exists"})
             if user.role == "instructor":
                 data = Course.objects.create(
-                    instructor=user, title=title, description=description,image=image
+                    instructor=user, title=title, description=description, image=image
                 )
                 return JsonResponse({"msg": "Course Created Succesfully", "course_id": data.id}, status=201)
             else:
@@ -46,7 +45,7 @@ def getallCourse(req):
                 "id": item.id,
                 'title': item.title,
                 "description": item.description,
-                "image":item.image,
+                "image": item.image,
                 "instructor": instructors
             }
             course_data.append(obj)
