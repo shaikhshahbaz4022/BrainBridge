@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
+import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-boxes',
@@ -8,6 +8,7 @@ import { faAngleRight } from '@fortawesome/free-solid-svg-icons';
 })
 export class BoxesComponent {
   right = faAngleRight;
+  buttonArrayRight = faArrowRight;
   boxData: any[] = [
     {
       image:
