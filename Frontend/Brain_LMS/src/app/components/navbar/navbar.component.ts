@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,11 +13,16 @@ export class NavbarComponent {
   isMobileMenuOpen = false;
   search = faSearch;
 
+  constructor(private router: Router) {}
+
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
   }
 
   closeMobileMenu(): void {
     this.isMobileMenuOpen = false;
+  }
+  rigisterRoute() {
+    this.router.navigate(['/register']);
   }
 }
