@@ -46,6 +46,7 @@ def getallCourse(req):
                 "id": item.id,
                 'title': item.title,
                 "description": item.description,
+                "image":item.image,
                 "instructor": instructors
             }
             course_data.append(obj)

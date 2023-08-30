@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'LMS.wsgi.application'
 DatabaseURL=config("DatabaseURL")
 DATABASES = {
     'default': dj_database_url.parse(
-        DatabaseURL,
+        DatabaseURL
        
     )
 }
