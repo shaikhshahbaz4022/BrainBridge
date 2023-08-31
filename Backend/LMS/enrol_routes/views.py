@@ -45,7 +45,8 @@ def getenroldata(req):
                 "instructor_name": instructor.username,
                 "course_name": course.title,
                 "course_desc": course.description,
-                "enrollment_date": item.enrollment_date
+                "enrollment_date": item.enrollment_date,
+                "image_course": course.image
             }
             data.append(obj)
         return JsonResponse({"data": data})

@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
   }
   rigisterRoute() {
     if (this.data.length == 0) {
-      this.router.navigate(['/register']);
+      this.router.navigate(['/login']);
     }
   }
   logout(): void {
