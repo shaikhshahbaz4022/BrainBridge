@@ -5,6 +5,7 @@ django-cors-headers==4.1.0
 gunicorn==21.2.0
 packaging==23.1
 psycopg2-binary==2.9.7
+PyJWT==2.8.0
 python-decouple==3.8
 sqlparse==0.4.4
 typing_extensions==4.7.1
