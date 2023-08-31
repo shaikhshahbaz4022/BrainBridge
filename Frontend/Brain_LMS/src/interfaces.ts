@@ -41,3 +41,23 @@ export interface CourseData {
 export interface data {
   data: [];
 }
+// {
+//   "data": [
+//     {
+//       "id": 1,
+//       "student_name": "shahbaz",
+//       "instructor_name": "pulkit",
+//       "course_name": "Full Stack Web Development",
+//       "course_desc": "Dive into comprehensive full stack web dev. Learn front-end design & master back-end coding for dynamic web app creation. Enroll today!",
+//       "enrollment_date": "2023-08-31T10:28:11.758Z"
+//     }
+//   ]
+// }
+export interface Enrolmentdata {
+  id: string;
+  student_name: string;
+  instructor_name: string;
+  course_name: string;
+  course_desc: string;
+  enrollment_date: string;
+}

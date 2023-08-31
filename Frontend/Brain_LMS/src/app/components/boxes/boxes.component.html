@@ -26,7 +26,19 @@
     </div>
   </div>
 </section>
-<app-allcourses></app-allcourses>
+<div *ngIf="data; else LoginMessage">
+  <app-allcourses></app-allcourses>
+</div>
+<ng-template #LoginMessage>
+  <div
+    class="flex mt-6 justify-center items-center mx-7 bg-gradient-to-r from-blue-500 to-purple-600 p-8 rounded-lg shadow-lg"
+  >
+    <h1 class="text-4xl font-bold text-center text-white">
+      Login to enroll into courses
+    </h1>
+  </div>
+</ng-template>
+
 <section class="mt-5">
   <div class="mx-6">
     <h1 class="text-2xl my-3 font-semibold">Earn Your Degree</h1>

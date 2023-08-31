@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -6,9 +6,20 @@ import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './boxes.component.html',
   styleUrls: ['./boxes.component.css'],
 })
-export class BoxesComponent {
+export class BoxesComponent implements OnInit {
+  constructor(private cdRef: ChangeDetectorRef) {}
   right = faAngleRight;
   buttonArrayRight = faArrowRight;
+
+  data: any;
+  ngOnInit(): void {
+    this.loadData();
+  }
+
+  loadData(): void {
+    this.data = this.data = localStorage.getItem('token') || null;
+    this.cdRef.detectChanges();
+  }
   boxData: any[] = [
     {
       image:
