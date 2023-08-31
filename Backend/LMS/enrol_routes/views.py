@@ -8,7 +8,8 @@ User = get_user_model()
 
 def createEnrol(req, courseID):
     if (req.method == "POST"):
-        user = req.user
+        userid = req.userid
+        user = User.objects.get(id=userid)
         if user.role == "student":
 
             course = Course.objects.get(id=courseID)
@@ -28,7 +29,9 @@ def createEnrol(req, courseID):
 
 def getenroldata(req):
     if req.method == "GET":
-        student = req.user
+        studentid = req.userid
+        student = User.objects.get(id=studentid)
+
         enroldata = Enrollment.objects.filter(student=student)  # [{},{},{}]
         print(enroldata)
         data = []

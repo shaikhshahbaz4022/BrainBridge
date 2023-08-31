@@ -1,10 +1,10 @@
 from django.shortcuts import render
-
+from decouple import config
 # Create your views here.
 from django.http import HttpResponse, JsonResponse
 from django.contrib.auth.hashers import make_password
-from django.contrib.auth import authenticate, login, logout
-
+from django.contrib.auth import authenticate, logout
+import jwt
 import json
 from django.contrib.auth import get_user_model
 User = get_user_model()
@@ -36,18 +36,23 @@ def Login(request):
         body = json.loads(request.body)
         email = body.get("email")
         password = body.get("password")
+        secretKey = config("SecretKey")
         try:
             UserModel = User.objects.get(email=email)
             user = authenticate(email=email, password=password)
             if user is not None:
-                login(request, user)
+                payload = {
+                    'userid': user.id
+                }
+                token = jwt.encode(payload, secretKey, algorithm='HS256')
+
                 userobj = {
                     "id": user.id,
                     "name": user.username,
                     "email": user.email,
                     "role": user.role
                 }
-                return JsonResponse({"msg": "login succesfull", "user": userobj})
+                return JsonResponse({"msg": "login succesfull", "user": userobj, "token": token})
         except User.DoesNotExist:
             return JsonResponse({"msg": "User Does Not exist"})
     else:
@@ -59,9 +64,13 @@ def Logout(req):
     return JsonResponse({"msg": "Logout Succesful"})
 
 
-def get(request):
-    if request.user.is_authenticated:
-        print(request.user)
-        return JsonResponse({"msg": "welcome"})
-    else:
-        return JsonResponse({"msg": "Login first"})
+# def get(request):
+#     if request.user.is_authenticated:
+#         print(request.user)
+#         return JsonResponse({"msg": "welcome"})
+#     else:
+#         return JsonResponse({"msg": "Login first"})
+
+
+def homeroute(req):
+    return JsonResponse({"msg": "Welcome To Our Platform"})

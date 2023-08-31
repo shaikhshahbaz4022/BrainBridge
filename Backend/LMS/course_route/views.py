@@ -15,7 +15,8 @@ def CreateCourse(req):
             image = body.get("image")
             if not title or not description:
                 return JsonResponse({"msg": "Title or Desc Missing"})
-            user = req.user
+            userid = req.userid
+            user = User.objects.get(id=userid)
             isCourseExists = Course.objects.filter(title=title).exists()
             if isCourseExists:
                 return JsonResponse({"msg": "Course Already Exists"})

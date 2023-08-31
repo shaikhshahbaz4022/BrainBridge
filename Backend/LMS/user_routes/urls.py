@@ -4,5 +4,6 @@ urlpatterns = [
     path('register', views.Register, name="register"),
     path('login', views.Login, name="login"),
     path('logout', views.Logout, name='logout'),
-    path('get', views.get, name='get'),
+    # path('get', views.get, name='get'),
+    path('home', views.homeroute, name="home")
 ]

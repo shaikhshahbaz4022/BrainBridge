@@ -9,10 +9,11 @@ from .models import Assignment
 User = get_user_model()
 
 
-@login_required
+# @login_required
 def createAssi(req, courseID):
     if (req.method == "POST"):
-        user = req.user
+        userid = req.userid
+        user = User.objects.get(id=userid)
         if (user.role == "student"):
             return JsonResponse({"msg": "UnAuthorized Person"}, status=404)
         body = json.loads(req.body)
@@ -29,10 +30,11 @@ def createAssi(req, courseID):
         return JsonResponse({"msg": "Invalid Request"}, status=405)
 
 
-@login_required
+# @login_required
 def getUserAssi(req):
     if (req.method == "GET"):
-        user = req.user
+        userid = req.userid
+        user = User.objects.get(id=userid)
         if (user.role == "instructor"):
             return JsonResponse({"msg": "You Are not Authorized"})
         enrollments = Enrollment.objects.filter(student=user)
@@ -58,7 +60,9 @@ def getUserAssi(req):
 
 def updateAssign(req, assignID):
     if (req.method == "PATCH"):
-        if (req.user.role == "student"):
+        userid = req.userid
+        user = User.objects.get(id=userid)
+        if (user.role == "student"):
             return JsonResponse({"msg": "You Are Not Authorized"})
         body = json.loads(req.body)
         title = body.get("title")
@@ -81,7 +85,9 @@ def updateAssign(req, assignID):
 
 def deleteAssign(req, assignID):
     if req.method == "DELETE":
-        if req.user.role == "student":
+        userid = req.userid
+        user = User.objects.get(id=userid)
+        if user.role == "student":
             return JsonResponse({"msg": "You Are not Authorized"})
         try:
             assignment = Assignment.objects.get(id=assignID)
