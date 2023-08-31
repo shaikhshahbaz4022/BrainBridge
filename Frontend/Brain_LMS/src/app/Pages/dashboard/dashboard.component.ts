@@ -28,6 +28,7 @@ export class DashboardComponent implements OnInit {
       console.log(data);
       this.courseService.createCoursedata(data).subscribe((data) => {
         console.log(data);
+        alert('Created Course ');
       });
     }
   }

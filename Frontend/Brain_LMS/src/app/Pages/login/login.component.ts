@@ -35,8 +35,11 @@ export class LoginComponent implements OnInit {
         if (data.msg == 'login succesfull') {
           console.log('Inside', data.user);
           localStorage.setItem('user', JSON.stringify(data.user));
+          localStorage.setItem('token', data.token);
           alert(data.msg);
-          this.router.navigate(['/dashboard']);
+          setTimeout(() => {
+            this.router.navigate(['/dashboard']);
+          }, 2000);
         } else {
           alert(data.msg);
         }
