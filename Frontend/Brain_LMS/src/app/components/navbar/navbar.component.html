@@ -25,21 +25,27 @@
       <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
         >Courses</a
       >
-      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+      <a
+        href="/homepage"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
         >Home</a
       >
-      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+      <a
+        href="/dashboard"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
         >Dashboard</a
       >
 
-      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >Assignments</a
+      <a
+        href="#"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >{{ showname || "Login Please" }}</a
       >
       <button
-        (click)="rigisterRoute()"
+        (click)="toggleLogin ? logout() : rigisterRoute()"
         class="button-hover ml-6 px-4 py-2 text-l rounded font-bold"
       >
-        LOGIN
+        {{ toggleLogin ? "LOGOUT" : "LOGIN" }}
       </button>
     </div>
 

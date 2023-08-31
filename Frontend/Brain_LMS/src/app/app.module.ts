@@ -14,6 +14,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Pages/login/login.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AllcoursesComponent } from './components/allcourses/allcourses.component';
+import { AllenrolmentsComponent } from './components/allenrolments/allenrolments.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,6 +28,8 @@ import { AllcoursesComponent } from './components/allcourses/allcourses.componen
     LoginComponent,
     DashboardComponent,
     AllcoursesComponent,
+    AllenrolmentsComponent,
+    CreateCourseComponent,
   ],
   imports: [
     BrowserModule,
