@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
-import { Create_Course } from 'src/interfaces';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CourseData, Create_Course, data } from 'src/interfaces';
+
 @Injectable({
   providedIn: 'root',
 })
@@ -12,8 +13,17 @@ export class CourseService {
   id: number = this.userData.id;
 
   createCoursedata(obj: Create_Course): Observable<any> {
-    return this.http.post<Create_Course>(`${this.url}/create/${this.id}`, obj, {
-      withCredentials: true,
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
     });
+    return this.http.post<Create_Course>(`${this.url}/create`, obj, {
+      headers,
+    });
+  }
+  getallcourses(): Observable<data> {
+    const headers = new HttpHeaders({
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    });
+    return this.http.get<data>(`${this.url}/get`, { headers });
   }
 }

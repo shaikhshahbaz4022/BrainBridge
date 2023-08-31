@@ -13,6 +13,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './Pages/login/login.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
+import { AllcoursesComponent } from './components/allcourses/allcourses.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +25,7 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
     RegisterComponent,
     LoginComponent,
     DashboardComponent,
+    AllcoursesComponent,
   ],
   imports: [
     BrowserModule,
