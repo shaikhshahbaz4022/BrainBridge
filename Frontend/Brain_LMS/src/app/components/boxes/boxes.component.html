@@ -31,7 +31,7 @@
 </div>
 <ng-template #LoginMessage>
   <div
-    class="flex mt-6 justify-center items-center mx-7 bg-gradient-to-r from-blue-500 to-purple-600 p-8 rounded-lg shadow-lg"
+    class="flex mt-6 justify-center items-center mx-7 bg-gradient-to-r bg-violet-950 p-8 rounded-lg shadow-lg"
   >
     <h1 class="text-4xl font-bold text-center text-white">
       Login to enroll into courses
@@ -100,6 +100,7 @@
         }}</a>
         <p class="my-2">{{ item.type }}</p>
         <button
+          (click)="sentmessage()"
           class="py-2 rounded font-medium px-5 bg-violet-950 text-white hover:outline-black hover:text-black button_pink hover:cursor-pointer"
         >
           Enroll

@@ -99,3 +99,24 @@ def deleteAssign(req, assignID):
         return JsonResponse({"msg": "Assignment Deleted Succesfully"})
     else:
         return JsonResponse({"msg": "Invalid Request"}, status=405)
+
+
+def GetbyID(req, assiID):
+    if (req.method == "GET"):
+        ass = Assignment.objects.get(id=assiID)
+
+        if ass:
+            obj = {
+                "id": ass.id,
+                "title": ass.title,
+                "description": ass.description,
+                "due_date": ass.due_date,
+                "course_name": ass.course.title,
+                "instructor_name": ass.course.instructor.username,
+
+            }
+            return JsonResponse({"data": obj})
+        else:
+            return JsonResponse({"msg": "Assignment is Not Present"})
+    else:
+        return JsonResponse({"msg": "Invalid request"}, status=405)

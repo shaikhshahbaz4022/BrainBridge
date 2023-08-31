@@ -16,6 +16,8 @@ import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AllcoursesComponent } from './components/allcourses/allcourses.component';
 import { AllenrolmentsComponent } from './components/allenrolments/allenrolments.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { AssignmentsComponent } from './Pages/assignments/assignments.component';
+import { PerticularComponent } from './Pages/perticular/perticular.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,6 +32,8 @@ import { CreateCourseComponent } from './components/create-course/create-course.
     AllcoursesComponent,
     AllenrolmentsComponent,
     CreateCourseComponent,
+    AssignmentsComponent,
+    PerticularComponent,
   ],
   imports: [
     BrowserModule,

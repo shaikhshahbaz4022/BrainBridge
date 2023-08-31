@@ -60,4 +60,13 @@ export interface Enrolmentdata {
   course_name: string;
   course_desc: string;
   enrollment_date: string;
+  image_course: string;
+}
+export interface assignInter {
+  id: number;
+  title: string;
+  description: string;
+  course_name: string;
+  due_date: string;
+  instructor_name: string;
 }

@@ -1,0 +1,42 @@
+<app-navbar></app-navbar>
+<div class="mx-9 my-7">
+  <h1 class="text-xl">Courses > Assignments > {{ alldata.id }}</h1>
+</div>
+<div
+  class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-800"
+>
+  <div class="w-1/2 bg-white shadow-md rounded-lg p-8 space-y-6">
+    <h2 class="text-2xl font-semibold text-gray-900 dark:text-white">
+      {{ alldata.title }}
+    </h2>
+    <p class="text-gray-600 dark:text-gray-400">{{ alldata.description }}</p>
+    <p class="text-gray-600 dark:text-gray-400">
+      Course Name: {{ alldata.course_name }}
+    </p>
+    <p class="text-gray-600 dark:text-gray-400">
+      Instructor: {{ alldata.instructor_name }}
+    </p>
+    <p class="text-gray-600 dark:text-gray-400">
+      Due Date: {{ alldata.due_date | date }}
+    </p>
+
+    <div class="mb-6">
+      <label
+        for="default-input"
+        class="block mb-2 text-lg font-medium text-gray-900 dark:text-white"
+        >Enter Submission Link</label
+      >
+      <input
+        type="text"
+        id="default-input"
+        class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+    </div>
+
+    <button
+      class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-lg transition duration-300"
+    >
+      Submit
+    </button>
+  </div>
+</div>

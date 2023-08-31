@@ -22,25 +22,40 @@
     <div
       class="hidden md:flex md:items-center justify-evenly md:space-x-4 w-1/2"
     >
-      <a href="#" class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+      <a
+        *ngIf="toggleLogin"
+        href="#"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
         >Courses</a
       >
       <a
-        href="/homepage"
+        *ngIf="!toggleLogin"
         class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >Home</a
+        >Teach On BrainBridge</a
       >
       <a
+        *ngIf="toggleLogin"
+        href="/assignments"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >Assignments</a
+      >
+      <a
+        *ngIf="!toggleLogin"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >BrainBridge Business</a
+      >
+      <a
+        *ngIf="toggleLogin"
         href="/dashboard"
         class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >Dashboard</a
+        >My Learnings</a
+      >
+      <a
+        *ngIf="toggleLogin"
+        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        >{{ showname }}</a
       >
 
-      <a
-        href="#"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >{{ showname || "Login Please" }}</a
-      >
       <button
         (click)="toggleLogin ? logout() : rigisterRoute()"
         class="button-hover ml-6 px-4 py-2 text-l rounded font-bold"
@@ -64,11 +79,11 @@
         class="text-amber-950 font-bold text-xl cursor-pointer mb-4"
         (click)="closeMobileMenu()"
       ></fa-icon>
-      <a href="#" class="text-amber-950 font-bold p-2">Courses</a>
-      <a href="#" class="text-amber-950 font-bold p-2">Home</a>
-      <a href="#" class="text-amber-950 font-bold p-2">Dashboard</a>
-      <a href="#" class="text-amber-950 font-bold p-2">Login</a>
-      <a href="#" class="text-amber-950 font-bold p-2">Assignments</a>
+      <a href="/" class="text-amber-950 font-bold p-2">Courses</a>
+      <a href="/homepage" class="text-amber-950 font-bold p-2">Home</a>
+      <a href="/dashboard" class="text-amber-950 font-bold p-2">Dashboard</a>
+      <a href="/login" class="text-amber-950 font-bold p-2">Login</a>
+      <a href="/assignment" class="text-amber-950 font-bold p-2">Assignments</a>
     </div>
   </div>
 </div>

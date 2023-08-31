@@ -68,3 +68,12 @@ def getCourseByID(req, courseID):
         return JsonResponse(obj)
     else:
         return JsonResponse({"msg": "Invalid Request"}, status=405)
+
+
+def deleteCourse(req, courseID):
+    if req.method == "DELETE":
+        course = Course.objects.get(id=courseID)
+        course.delete()
+        return JsonResponse({"msg": "course Deleted Succesfully"}, status=200)
+    else:
+        return JsonResponse({"msg": "Invalid request"}, status=405)

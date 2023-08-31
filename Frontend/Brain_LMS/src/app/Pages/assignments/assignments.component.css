@@ -1,5 +1,7 @@
 .button_pink:hover {
   background-color: white;
   outline: 1px solid black;
-  color: brown;
+  color: black;
+  font-weight: 800;
+  font-size: medium;
 }
