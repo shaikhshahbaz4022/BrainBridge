@@ -1,3 +1,4 @@
+import { AssignmentSubmit } from './../../interfaces';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -41,6 +42,17 @@ export class EnrolmentsService {
     };
     let id = localStorage.getItem('assignID');
     return this.http.get<{ data: assignInter }>(`${assignURL}/${id}`, {
+      headers,
+    });
+  }
+  submitAssignment(obj: any, id: any): Observable<AssignmentSubmit> {
+    const submitUrl = `http://localhost:8000/sub`;
+    let headers = {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    };
+    // let assignID = localStorage.getItem('assignID');
+    // console.log(assignID);
+    return this.http.post<AssignmentSubmit>(`${submitUrl}/submit/${id}`, obj, {
       headers,
     });
   }

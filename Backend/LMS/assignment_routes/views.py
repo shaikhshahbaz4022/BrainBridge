@@ -48,6 +48,7 @@ def getUserAssi(req):
                     "title": assi.title,
                     "description": assi.description,
                     "due_date": assi.due_date,
+                    "start_date": assi.start_date,
                     "course_name": course.title,
                     "instructor_name": course.instructor.username,
 
@@ -110,12 +111,32 @@ def GetbyID(req, assiID):
                 "id": ass.id,
                 "title": ass.title,
                 "description": ass.description,
+                "start_date": ass.start_date,
                 "due_date": ass.due_date,
                 "course_name": ass.course.title,
                 "instructor_name": ass.course.instructor.username,
 
             }
+
             return JsonResponse({"data": obj})
+        else:
+            return JsonResponse({"msg": "Assignment is Not Present"})
+    else:
+        return JsonResponse({"msg": "Invalid request"}, status=405)
+
+
+def getcourseassign(req, courseID):
+    if (req.method == "GET"):
+        try:
+            coursefind = Course.objects.get(id=courseID)
+        except Course.DoesNotExist:
+            return JsonResponse({"msg": "Course Not Found"})
+
+        ass = Assignment.objects.filter(course=coursefind)
+
+        if ass:
+            listing = {"data": list(ass.values())}
+            return JsonResponse(listing)
         else:
             return JsonResponse({"msg": "Assignment is Not Present"})
     else:

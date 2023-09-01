@@ -68,5 +68,26 @@ export interface assignInter {
   description: string;
   course_name: string;
   due_date: string;
+  start_date: string;
   instructor_name: string;
+}
+export interface AssignmentSubmit {
+  submission_link: string;
+}
+
+export interface InstructorCourse {
+  id: string;
+  instructor_id: string;
+  title: string;
+  description: string;
+  image: string;
+}
+
+export interface SubmissionGet {
+  id: any;
+  student_name: string;
+  instructor_name: string;
+  course_name: string;
+  submission_link: string;
+  submission_date: string;
 }
