@@ -77,3 +77,14 @@ def deleteCourse(req, courseID):
         return JsonResponse({"msg": "course Deleted Succesfully"}, status=200)
     else:
         return JsonResponse({"msg": "Invalid request"}, status=405)
+
+
+def getInstructorCourse(req):
+    if (req.method == "GET"):
+        userid = req.userid
+        user = User.objects.get(id=userid)
+        getcourse = Course.objects.filter(instructor=user)
+        listing = {"data": list(getcourse.values())}
+        return JsonResponse(listing)
+    else:
+        return JsonResponse({"msg": "Invalid Request"}, status=405)

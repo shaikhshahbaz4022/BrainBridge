@@ -19,6 +19,11 @@ import { CreateCourseComponent } from './components/create-course/create-course.
 import { AssignmentsComponent } from './Pages/assignments/assignments.component';
 import { PerticularComponent } from './Pages/perticular/perticular.component';
 import { LoadingComponent } from './components/loading/loading.component';
+import { FormsModule } from '@angular/forms';
+import { InstructordashboardComponent } from './Pages/instructordashboard/instructordashboard.component';
+import { InstrNavbarComponent } from './components/instr-navbar/instr-navbar.component';
+import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.component';
+import { SubmissionsComponent } from './Pages/submissions/submissions.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +41,10 @@ import { LoadingComponent } from './components/loading/loading.component';
     AssignmentsComponent,
     PerticularComponent,
     LoadingComponent,
+    InstructordashboardComponent,
+    InstrNavbarComponent,
+    InstructorassiComponent,
+    SubmissionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +52,7 @@ import { LoadingComponent } from './components/loading/loading.component';
     FontAwesomeModule,
     ReactiveFormsModule,
     HttpClientModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

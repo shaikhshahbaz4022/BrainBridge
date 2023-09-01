@@ -6,6 +6,9 @@ import { LoginComponent } from './Pages/login/login.component';
 import { DashboardComponent } from './Pages/dashboard/dashboard.component';
 import { AssignmentsComponent } from './Pages/assignments/assignments.component';
 import { PerticularComponent } from './Pages/perticular/perticular.component';
+import { InstructordashboardComponent } from './Pages/instructordashboard/instructordashboard.component';
+import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.component';
+import { SubmissionsComponent } from './Pages/submissions/submissions.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' },
@@ -15,6 +18,9 @@ const routes: Routes = [
   { path: 'dashboard', component: DashboardComponent },
   { path: 'assignments', component: AssignmentsComponent },
   { path: 'perticular', component: PerticularComponent },
+  { path: 'instructordashboard', component: InstructordashboardComponent },
+  { path: 'intructorassignment', component: InstructorassiComponent },
+  { path: 'submissions', component: SubmissionsComponent },
 ];
 
 @NgModule({

@@ -10,6 +10,7 @@ import { assignInter } from 'src/interfaces';
 export class PerticularComponent implements OnInit {
   isloading: boolean = true;
   alldata: any = {};
+  submitInput: any;
   ngOnInit(): void {
     this.getperticularAssign();
   }
@@ -19,6 +20,14 @@ export class PerticularComponent implements OnInit {
       console.log(data);
       this.alldata = data.data;
       this.isloading = false;
+    });
+  }
+  SubmitAssignment(id: any) {
+    const obj = {
+      submission_link: this.submitInput,
+    };
+    this.enrolmentservice.submitAssignment(obj, id).subscribe((data) => {
+      console.log(data);
     });
   }
 }

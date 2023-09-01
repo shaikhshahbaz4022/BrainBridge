@@ -1,0 +1,17 @@
+.course_button {
+  background-color: white;
+  color: #283593;
+  padding: 10px 30px 10px 10px;
+  border-radius: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.course_button:hover {
+  background-color: purple;
+  outline: 1px solid white;
+  color: white;
+}
+
+.button_pink:hover {
+  background-color: white;
+  outline: 1px solid black;
+}

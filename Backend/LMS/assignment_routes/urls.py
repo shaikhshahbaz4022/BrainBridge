@@ -5,6 +5,8 @@ urlpatterns = [
     path("getassign", views.getUserAssi, name="getassign"),
     path("update/<int:assignID>", views.updateAssign, name="updateAssign"),
     path("delete/<int:assignID>", views.deleteAssign, name="deleteAssign"),
-    path("getbyid/<int:assiID>", views.GetbyID, name="getbyid")
+    path("getbyid/<int:assiID>", views.GetbyID, name="getbyid"),
+    path("getcourseassign/<int:courseID>",
+         views.getcourseassign, name="getcourseinst")
 
 ]
