@@ -52,5 +52,8 @@ export class NavbarComponent implements OnInit {
     this.cdref.detectChanges();
     alert('Logout Succesfully');
     window.location.reload();
+    setTimeout(() => {
+      this.router.navigate(['/homepage']);
+    }, 2000);
   }
 }

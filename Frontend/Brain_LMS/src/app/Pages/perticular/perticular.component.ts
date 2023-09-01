@@ -8,6 +8,7 @@ import { assignInter } from 'src/interfaces';
   styleUrls: ['./perticular.component.css'],
 })
 export class PerticularComponent implements OnInit {
+  isloading: boolean = true;
   alldata: any = {};
   ngOnInit(): void {
     this.getperticularAssign();
@@ -17,6 +18,7 @@ export class PerticularComponent implements OnInit {
     this.enrolmentservice.getperticularAssi().subscribe((data) => {
       console.log(data);
       this.alldata = data.data;
+      this.isloading = false;
     });
   }
 }

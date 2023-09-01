@@ -17,11 +17,12 @@ export class AssignmentsComponent implements OnInit {
     private enrolmentservice: EnrolmentsService,
     private router: Router
   ) {}
-
+  isloading: boolean = true;
   getAllAssignments() {
     this.enrolmentservice.getAssignmentsall().subscribe((data) => {
       console.log(data);
       this.alldata = data.data;
+      this.isloading = false;
     });
   }
   //
