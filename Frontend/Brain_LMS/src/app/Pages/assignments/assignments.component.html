@@ -2,6 +2,9 @@
 <div class="mx-9 my-7">
   <h1 class="text-xl">Courses > Assignments</h1>
 </div>
+<div class="flex justify-center items-start">
+  <app-loading [isloading]="isloading"></app-loading>
+</div>
 <section class="mt-8 mx-9 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
   <div
     *ngFor="let item of alldata"

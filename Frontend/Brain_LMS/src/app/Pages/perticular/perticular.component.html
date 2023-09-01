@@ -2,7 +2,11 @@
 <div class="mx-9 my-7">
   <h1 class="text-xl">Courses > Assignments > {{ alldata.id }}</h1>
 </div>
+<div class="flex justify-center items-start">
+  <app-loading [isloading]="isloading"></app-loading>
+</div>
 <div
+  *ngIf="!isloading"
   class="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-800"
 >
   <div class="w-1/2 bg-white shadow-md rounded-lg p-8 space-y-6">
@@ -17,7 +21,7 @@
       Instructor: {{ alldata.instructor_name }}
     </p>
     <p class="text-gray-600 dark:text-gray-400">
-      Due Date: {{ alldata.due_date | date }}
+      Due Date: {{ alldata.due_date | date : "medium" }}
     </p>
 
     <div class="mb-6">

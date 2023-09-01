@@ -11,12 +11,14 @@ export class AllenrolmentsComponent implements OnInit {
   ngOnInit(): void {
     this.getAllEnrolData();
   }
+  isloading = true;
   alldata: Enrolmentdata[] = [];
   constructor(private enrolService: EnrolmentsService) {}
 
   getAllEnrolData() {
     this.enrolService.getallEnrolments().subscribe((data) => {
       this.alldata = data.data;
+      this.isloading = false;
       console.log(data);
     });
   }

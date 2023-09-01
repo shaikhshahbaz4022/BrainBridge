@@ -1,31 +1,37 @@
-<div class="mx-9 my-7">
-  <h1 class="text-xl">Courses ></h1>
+<div class="flex justify-center items-start">
+  <app-loading [isloading]="isloading"></app-loading>
 </div>
-<section class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-  <div
-    *ngFor="let item of alldata"
-    class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300"
-  >
-    <img
-      class="w-full h-56 object-cover"
-      [src]="item.image_course"
-      [alt]="item.course_name"
-    />
-    <div class="p-4">
-      <h2 class="text-gray-800 text-xl font-semibold">
-        {{ item.course_name }}
-      </h2>
-      <p class="mt-2 text-gray-600">{{ item.course_desc }}</p>
-      <p class="mt-2 text-gray-600">Instructor: {{ item.instructor_name }}</p>
-      <p class="mt-2 text-gray-600">Student: {{ item.student_name }}</p>
-      <p class="mt-2 text-gray-600">
-        Enrollment Date: {{ item.enrollment_date | date : "medium" }}
-      </p>
-      <a
-        href="/assignments"
-        class="mt-4 inline-block bg-blue-500 button_pink text-white font-bold py-2 px-4 rounded transition duration-300 cursor-pointer"
-        >Assignments</a
-      >
-    </div>
+
+<div *ngIf="!isloading">
+  <div class="mx-9 my-7">
+    <h1 class="text-xl">Courses ></h1>
   </div>
-</section>
+  <section class="mt-8 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+    <div
+      *ngFor="let item of alldata"
+      class="max-w-sm mx-auto bg-white shadow-lg rounded-lg overflow-hidden hover:shadow-xl transition duration-300"
+    >
+      <img
+        class="w-full h-56 object-cover"
+        [src]="item.image_course"
+        [alt]="item.course_name"
+      />
+      <div class="p-4">
+        <h2 class="text-gray-800 text-xl font-semibold">
+          {{ item.course_name }}
+        </h2>
+        <p class="mt-2 text-gray-600">{{ item.course_desc }}</p>
+        <p class="mt-2 text-gray-600">Instructor: {{ item.instructor_name }}</p>
+        <p class="mt-2 text-gray-600">Student: {{ item.student_name }}</p>
+        <p class="mt-2 text-gray-600">
+          Enrollment Date: {{ item.enrollment_date | date : "medium" }}
+        </p>
+        <a
+          href="/assignments"
+          class="mt-4 inline-block bg-blue-500 button_pink text-white font-bold py-2 px-4 rounded transition duration-300 cursor-pointer"
+          >Assignments</a
+        >
+      </div>
+    </div>
+  </section>
+</div>

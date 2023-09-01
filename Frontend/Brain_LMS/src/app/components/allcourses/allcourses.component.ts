@@ -9,6 +9,7 @@ import { CourseData } from 'src/interfaces';
   styleUrls: ['./allcourses.component.css'],
 })
 export class AllcoursesComponent implements OnInit {
+  isloading: boolean = true;
   data: CourseData[] = [];
   constructor(
     private courseService: CourseService,
@@ -21,6 +22,7 @@ export class AllcoursesComponent implements OnInit {
     this.courseService.getallcourses().subscribe((getdata) => {
       console.log(getdata);
       this.data = getdata.data;
+      this.isloading = false;
     });
   }
   CreateEnrolmanet(id: number) {
