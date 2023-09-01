@@ -37,9 +37,11 @@ export class LoginComponent implements OnInit {
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
           alert(data.msg);
-          setTimeout(() => {
-            this.router.navigate(['/homepage']);
-          }, 2000);
+          if (data.user.role == 'student') {
+            this.router.navigate(['/dashboard']);
+          } else {
+            this.router.navigate(['/instructordashboard']);
+          }
         } else {
           alert(data.msg);
         }
