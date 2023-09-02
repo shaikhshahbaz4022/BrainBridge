@@ -2,7 +2,7 @@
 <div class="flex justify-center items-start my-8">
   <app-loading [isloading]="isloading"></app-loading>
 </div>
-<app-create-course></app-create-course>
+
 <section class="mt-5">
   <div class="mx-6">
     <div
@@ -28,6 +28,7 @@
             item.type
           }}</a> -->
         <p class="my-2">{{ item.description }}</p>
+
         <button
           (click)="SeeAssignment(item.id)"
           class="py-2 rounded font-medium px-5 bg-violet-950 text-white hover:outline-black hover:text-black button_pink hover:cursor-pointer"
