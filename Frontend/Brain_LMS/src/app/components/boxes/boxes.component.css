@@ -36,3 +36,6 @@
 .grayyy {
   background-color: #023047;
 }
+.index {
+  z-index: 1;
+}

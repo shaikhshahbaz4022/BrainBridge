@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { faBars, faTimes, faSearch } from '@fortawesome/free-solid-svg-icons';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
@@ -13,13 +13,17 @@ export class NavbarComponent implements OnInit {
   closeIcon = faTimes;
   isMobileMenuOpen = false;
   search = faSearch;
-
+  profile: boolean = false;
   constructor(private router: Router, private cdref: ChangeDetectorRef) {}
   showname: string = '';
+  showemail: string = '';
+  role: string = '';
   toggleLogin: boolean = false;
 
   ngOnInit(): void {
     this.showname = this.showName();
+    this.showemail = this.data.email;
+    this.role = this.data.role;
     this.toggleLogin = this.data && this.data.name ? true : false;
     console.log(this.toggleLogin);
   }
@@ -34,6 +38,9 @@ export class NavbarComponent implements OnInit {
 
   toggleMobileMenu(): void {
     this.isMobileMenuOpen = !this.isMobileMenuOpen;
+  }
+  hideAndShow() {
+    this.profile = !this.profile;
   }
 
   closeMobileMenu(): void {
@@ -50,8 +57,12 @@ export class NavbarComponent implements OnInit {
     this.showname = '';
     this.toggleLogin = false;
     this.cdref.detectChanges();
-    alert('Logout Succesfully');
-    window.location.reload();
+    Swal.fire({
+      icon: 'success',
+      text: `Thankyou ! Visit Again `,
+      title: `Logout Succesfull`,
+    });
+
     setTimeout(() => {
       this.router.navigate(['/homepage']);
     }, 2000);

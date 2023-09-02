@@ -1,89 +1,157 @@
-<div class="bg-bc6c25 p-4 shadow-lg">
-  <div class="flex items-center justify-between">
-    <div class="text-white font-bold text-xl w-1/12">
-      <img
-        class="cursor-pointer rounded-xl hover:shadow-xl"
-        src="../../../assets/BORCELLE (1).jpg"
-        alt="Error"
-      />
-    </div>
-    <div class="relative">
-      <input
-        class="common-border rounded-xl py-2 px-20 pr-18 shadow-sm"
-        type="text"
-        placeholder="Search Courses"
-      />
-      <fa-icon
-        class="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer hover:text-lg hover:text-blue-950"
-        [icon]="search"
-      ></fa-icon>
-    </div>
+<div>
+  <div class="bg-bc6c25 p-4 shadow-lg relative">
+    <div class="flex items-center justify-between">
+      <div class="text-white font-bold text-xl w-1/12">
+        <img
+          class="cursor-pointer rounded-xl hover:shadow-xl"
+          src="../../../assets/BORCELLE (1).jpg"
+          alt="Error"
+        />
+      </div>
+      <div class="relative">
+        <input
+          class="common-border rounded-xl py-2 px-20 pr-18 shadow-sm"
+          type="text"
+          placeholder="Search Courses"
+        />
+        <fa-icon
+          class="absolute top-1/2 transform -translate-y-1/2 right-4 cursor-pointer hover:text-lg hover:text-blue-950"
+          [icon]="search"
+        ></fa-icon>
+      </div>
 
-    <div
-      class="hidden md:flex md:items-center justify-evenly md:space-x-4 w-1/2"
-    >
-      <a
-        *ngIf="toggleLogin"
-        href="#"
-        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
-        >Home</a
+      <div
+        class="hidden md:flex md:items-center justify-evenly md:space-x-4 w-1/2"
       >
-      <a
-        *ngIf="!toggleLogin"
-        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
-        >Teach On BrainBridge</a
-      >
-      <a
-        *ngIf="!toggleLogin"
-        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
-        >BrainBridge Business</a
-      >
-      <a
-        *ngIf="toggleLogin"
-        href="/dashboard"
-        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
-        >My Learnings</a
-      >
-      <a
-        *ngIf="toggleLogin"
-        href="/dashboard"
-        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
-        >Announcements</a
-      >
-      <a
-        *ngIf="toggleLogin"
-        class="text-white font-semibold font-sans cursor-pointer hover:underline text-xl py-1 px-1"
-        >{{ showname }}</a
-      >
+        <a
+          *ngIf="toggleLogin"
+          href="#"
+          class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+          >Home</a
+        >
+        <a
+          *ngIf="!toggleLogin"
+          class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+          >Teach On BrainBridge</a
+        >
+        <a
+          *ngIf="!toggleLogin"
+          class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+          >BrainBridge Business</a
+        >
+        <a
+          *ngIf="toggleLogin"
+          href="/dashboard"
+          class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+          >My Learnings</a
+        >
+        <a
+          *ngIf="toggleLogin"
+          href="/dashboard"
+          class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+          >Announcements</a
+        >
+        <a
+          *ngIf="toggleLogin"
+          (click)="hideAndShow()"
+          class="text-white font-semibold font-sans cursor-pointer hover:underline text-xl py-1 px-1"
+          >{{ showname }}</a
+        >
 
-      <button
-        (click)="toggleLogin ? logout() : rigisterRoute()"
-        class="buttoncheck ml-6 px-4 py-2 text-l rounded font-semibold font-sans"
-      >
-        {{ toggleLogin ? "LOGOUT" : "LOGIN" }}
-      </button>
+        <button
+          (click)="toggleLogin ? logout() : rigisterRoute()"
+          class="buttoncheck ml-6 px-4 py-2 text-l rounded font-semibold font-sans"
+        >
+          {{ toggleLogin ? "LOGOUT" : "LOGIN" }}
+        </button>
+      </div>
+
+      <div class="md:hidden">
+        <fa-icon
+          [icon]="mobileMenuIcon"
+          class="text-white font-semibold font-sans hover:text-black text-xl cursor-pointer"
+          (click)="toggleMobileMenu()"
+        ></fa-icon>
+      </div>
     </div>
-
-    <div class="md:hidden">
-      <fa-icon
-        [icon]="mobileMenuIcon"
-        class="text-white font-semibold font-sans hover:text-black text-xl cursor-pointer"
-        (click)="toggleMobileMenu()"
-      ></fa-icon>
+    <div *ngIf="isMobileMenuOpen" class="mt-4 md:hidden">
+      <div class="flex flex-col items-end">
+        <fa-icon
+          [icon]="closeIcon"
+          class="text-white font-bold text-xl cursor-pointer mb-4"
+          (click)="closeMobileMenu()"
+        ></fa-icon>
+        <a href="/" class="text-white font-bold p-2">Enrolments</a>
+        <a href="/homepage" class="text-white font-bold p-2">Home</a>
+        <a href="/dashboard" class="text-white font-bold p-2">Dashboard</a>
+        <a href="/login" class="text-white font-bold p-2">Login</a>
+        <a href="/assignment" class="text-white font-bold p-2">Assignments</a>
+      </div>
     </div>
   </div>
-  <div *ngIf="isMobileMenuOpen" class="mt-4 md:hidden">
-    <div class="flex flex-col items-end">
-      <fa-icon
-        [icon]="closeIcon"
-        class="text-white font-bold text-xl cursor-pointer mb-4"
-        (click)="closeMobileMenu()"
-      ></fa-icon>
-      <a href="/" class="text-white font-bold p-2">Enrolments</a>
-      <a href="/homepage" class="text-white font-bold p-2">Home</a>
-      <a href="/dashboard" class="text-white font-bold p-2">Dashboard</a>
-      <a href="/login" class="text-white font-bold p-2">Login</a>
-      <a href="/assignment" class="text-white font-bold p-2">Assignments</a>
+
+  <div
+    *ngIf="profile"
+    class="absolute index top-20 right-52 w-full max-w-xs bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+  >
+    <div class="flex justify-center px-4 pt-4 index">
+      <div class="flex flex-col items-center pb-10">
+        <img
+          class="w-24 h-24 mb-3 rounded-full shadow-lg"
+          src="https://img.freepik.com/premium-vector/anonymous-user-circle-icon-vector-illustration-flat-style-with-long-shadow_520826-1931.jpg"
+          alt="Bonnie image"
+        />
+        <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">
+          {{ showname }}
+        </h5>
+        <span class="text-sm text-gray-500 dark:text-gray-400">{{
+          showemail
+        }}</span>
+        <span class="text-sm text-gray-500 dark:text-gray-400">{{ role }}</span>
+        <div class="flex mt-4 space-x-3 md:mt-6">
+          <a
+            href="#"
+            class="inline-flex items-center px-4 py-2 text-sm font-medium text-center text-white buttoncheck rounded-lg focus:ring-4 focus:outline-none focus:ring-blue-300"
+            >Edit Profile</a
+          >
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<!-- <div class="bg-gray-100 min-h-screen flex items-center justify-center">
+  <div class="bg-white w-full max-w-md p-6 rounded-lg shadow-lg">
+    
+    <div class="flex justify-center">
+      <img
+        src="https://via.placeholder.com/150"
+        alt="Profile Image"
+        class="w-32 h-32 rounded-full border-4 border-blue-500"
+      />
+    </div>
+
+    
+    <div class="mt-6">
+      <h1 class="text-2xl font-semibold text-gray-800">John Doe</h1>
+      <p class="text-gray-600">Visual Designer</p>
+      <p class="mt-2 text-gray-600">
+        Phone: <span class="text-gray-800">123-456-7890</span>
+      </p>
+      <p class="text-gray-600">
+        Address: <span class="text-gray-800">123 Main St, City, Country</span>
+      </p>
+      <p class="text-gray-600">
+        Email: <span class="text-gray-800">john.doe@example.com</span>
+      </p>
+    </div>
+
+    
+    <div class="mt-6 flex justify-end">
+      <button
+        class="bg-blue-500 text-white px-4 py-2 rounded-full hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
+      >
+        Edit Profile
+      </button>
+    </div>
+  </div>
+</div> -->
