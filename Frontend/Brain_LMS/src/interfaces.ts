@@ -70,6 +70,7 @@ export interface assignInter {
   due_date: string;
   start_date: string;
   instructor_name: string;
+  is_active: boolean;
 }
 export interface AssignmentSubmit {
   submission_link: string;

@@ -2,11 +2,12 @@
 <div class="flex justify-center items-start">
   <app-loading [isloading]="isloading"></app-loading>
 </div>
+<br />
+<br />
+<br />
+<br />
 <section class="mt-5">
   <div class="mx-6">
-    <h1 class="text-2xl my-3 font-semibold">
-      Most Popular Courses Enroll Now!
-    </h1>
     <div
       class="boxes-container grid lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1 gap-4"
     >
@@ -14,18 +15,26 @@
         *ngFor="let item of data"
         class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
       >
-        <h3 class="my-2 text-lg font-semibold">{{ item.title }}</h3>
+        <h3 class="my-2 text-xl text-indigo-950 underline font-semibold">
+          {{ item.title }}
+        </h3>
+        <hr />
         <h3 class="my-2 text-lg font-semibold">
           StartDate : {{ item.start_date }}
         </h3>
+        <hr />
         <h3 class="my-2 text-lg font-semibold">
           EndDate : {{ item.due_date }}
         </h3>
-
-        <p class="my-2">{{ item.description }}</p>
+        <hr />
+        <p class="my-2 text-lg font-bold">
+          Status : {{ item.is_active ? "ACTIVE" : "EXPIRED" }}
+        </p>
+        <hr />
+        <p class="my-2">Statement : <br />{{ item.description }}</p>
         <button
           (click)="SeeSubmissions(item.id)"
-          class="py-2 rounded font-medium px-5 bg-violet-950 text-white hover:outline-black hover:text-black button_pink hover:cursor-pointer"
+          class="py-2 rounded-lg font-medium px-5 button_pink grayy button_pink hover:cursor-pointer"
         >
           see Submissions
         </button>
