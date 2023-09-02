@@ -9,6 +9,7 @@ import { PerticularComponent } from './Pages/perticular/perticular.component';
 import { InstructordashboardComponent } from './Pages/instructordashboard/instructordashboard.component';
 import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.component';
 import { SubmissionsComponent } from './Pages/submissions/submissions.component';
+import { CreateCourseComponent } from './components/create-course/create-course.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' },
@@ -21,6 +22,7 @@ const routes: Routes = [
   { path: 'instructordashboard', component: InstructordashboardComponent },
   { path: 'intructorassignment', component: InstructorassiComponent },
   { path: 'submissions', component: SubmissionsComponent },
+  { path: 'createcourse', component: CreateCourseComponent },
 ];
 
 @NgModule({

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CourseService } from 'src/app/Services/course.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-create-course',
@@ -28,7 +29,11 @@ export class CreateCourseComponent implements OnInit {
       console.log(data);
       this.courseService.createCoursedata(data).subscribe((data) => {
         console.log(data);
-        alert('Created Course ');
+        Swal.fire({
+          icon: 'success',
+          title: `Course Created Succesfully`,
+          text: `${data.msg}`,
+        });
       });
     }
   }

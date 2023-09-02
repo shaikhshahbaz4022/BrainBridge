@@ -37,24 +37,27 @@ def Login(request):
         email = body.get("email")
         password = body.get("password")
         secretKey = config("SecretKey")
-        try:
-            UserModel = User.objects.get(email=email)
-            user = authenticate(email=email, password=password)
-            if user is not None:
-                payload = {
-                    'userid': user.id
-                }
-                token = jwt.encode(payload, secretKey, algorithm='HS256')
 
-                userobj = {
-                    "id": user.id,
-                    "name": user.username,
-                    "email": user.email,
-                    "role": user.role
-                }
-                return JsonResponse({"msg": "login succesfull", "user": userobj, "token": token})
-        except User.DoesNotExist:
-            return JsonResponse({"msg": "User Does Not exist"})
+        UserModel = User.objects.filter(email=email).exists()
+        if not UserModel:
+            return JsonResponse({"msg": "User Does not exists"})
+        user = authenticate(email=email, password=password)
+
+        if user is not None:
+            payload = {
+                'userid': user.id
+            }
+            token = jwt.encode(payload, secretKey, algorithm='HS256')
+            userobj = {
+                "id": user.id,
+                "name": user.username,
+                "email": user.email,
+                "role": user.role
+            }
+            return JsonResponse({"msg": "login succesfull", "user": userobj, "token": token})
+        else:
+            return JsonResponse({"msg": "wrong Credentials"})
+
     else:
         return JsonResponse({"msg": "Wrong routes"})
 
