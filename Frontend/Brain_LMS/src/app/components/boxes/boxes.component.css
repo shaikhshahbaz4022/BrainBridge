@@ -1,7 +1,7 @@
-.button_pink:hover {
+/* .button_pink:hover {
   background-color: white;
   outline: 1px solid black;
-}
+} */
 
 .course_button {
   background-color: white;
@@ -11,7 +11,28 @@
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .course_button:hover {
-  background-color: purple;
+  background-color: #023047;
+  font-weight: 700;
   outline: 1px solid white;
   color: white;
+}
+
+.button_pink:hover {
+  background-color: #fefae0;
+  outline: 2px solid #023047;
+  color: #023047;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: 0.3s ease-in-out;
+}
+.grayy {
+  background-color: #023047;
+  color: white;
+}
+.dullwhite {
+  background-color: #f8f9fa;
+}
+.grayyy {
+  background-color: #023047;
 }

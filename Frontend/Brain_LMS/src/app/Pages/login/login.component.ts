@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/Services/auth.service';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { LoginUser } from 'src/interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {}
   logingroup!: FormGroup;
+  isloading!: boolean;
 
   loginCall() {
     this.logingroup = this.fb.group({
@@ -28,6 +30,7 @@ export class LoginComponent implements OnInit {
   }
   OnSubmit() {
     console.log('clicked');
+    this.isloading = true;
     if (this.logingroup.value) {
       let data: LoginUser = this.logingroup.value;
       this.authService.loginfun(data).subscribe((data) => {
@@ -36,14 +39,27 @@ export class LoginComponent implements OnInit {
           console.log('Inside', data.user);
           localStorage.setItem('user', JSON.stringify(data.user));
           localStorage.setItem('token', data.token);
-          alert(data.msg);
-          if (data.user.role == 'student') {
-            this.router.navigate(['/dashboard']);
-          } else {
-            this.router.navigate(['/instructordashboard']);
-          }
+          this.isloading = false;
+          Swal.fire({
+            icon: 'success',
+            title: `Enjoy The Services`,
+            text: `${data.msg}`,
+            footer: '<a href="/register">Go To Register!</a>',
+          });
+          setTimeout(() => {
+            if (data.user.role == 'student') {
+              this.router.navigate(['/homepage']);
+            } else {
+              this.router.navigate(['/instructordashboard']);
+            }
+          }, 2500);
         } else {
-          alert(data.msg);
+          this.isloading = false;
+          Swal.fire({
+            icon: 'error',
+            title: `${data.msg}`,
+            text: `${data.msg}`,
+          });
         }
       });
     }
