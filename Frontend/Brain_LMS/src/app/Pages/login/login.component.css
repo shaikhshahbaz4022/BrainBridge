@@ -1,0 +1,25 @@
+.button_pink:hover {
+  background-color: #f8f9fa;
+  outline: 2px solid #023047;
+  color: #023047;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: 0.2s ease-in-out;
+}
+.grayy {
+  background-color: #023047;
+  color: white;
+}
+.body {
+  background-image: url("https://img.freepik.com/free-photo/flat-lay-workstation-with-copy-space-laptop_23-2148430867.jpg?w=1060&t=st=1693660747~exp=1693661347~hmac=4e89981122529326337fa30a871cc9c1f0cc0052fcd72277ebf36c098d0eccc2");
+}
+.dullwhite {
+  background-color: #f8f9fa;
+}
+.darkblue {
+  background-color: #023047;
+}
+.col {
+  background-color: #fefae0;
+}

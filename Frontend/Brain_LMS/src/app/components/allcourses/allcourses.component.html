@@ -11,7 +11,7 @@
     >
       <div
         *ngFor="let item of data"
-        class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
+        class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer dullwhite"
       >
         <div class="common-border rounded-md">
           <img
@@ -31,9 +31,9 @@
         <p class="my-2">{{ item.description }}</p>
         <button
           (click)="CreateEnrolmanet(item.id)"
-          class="py-2 rounded font-medium px-5 bg-violet-950 text-white hover:outline-black hover:text-black button_pink hover:cursor-pointer"
+          class="py-2 font-bold rounded px-5 grayy text-white hover:outline-black hover:text-black button_pink hover:cursor-pointer"
         >
-          Enroll
+          Enroll Now
         </button>
       </div>
     </div>

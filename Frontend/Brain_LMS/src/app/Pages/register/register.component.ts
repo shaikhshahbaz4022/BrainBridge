@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/Services/auth.service';
 import { User } from 'src/interfaces';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,6 +11,7 @@ import { User } from 'src/interfaces';
 })
 export class RegisterComponent implements OnInit {
   registerGroup!: FormGroup;
+  isloading!: boolean;
 
   constructor(
     private fb: FormBuilder,
@@ -29,17 +31,29 @@ export class RegisterComponent implements OnInit {
     });
   }
   OnSubmit() {
+    this.isloading = true;
     console.log('clicked');
     if (this.registerGroup.value) {
       let data: User = this.registerGroup.value;
       this.authService.registerfun(data).subscribe((data) => {
         if (data.msg == 'Registration Successful') {
-          alert(data.msg);
+          this.isloading = false;
+          Swal.fire({
+            icon: 'success',
+            title: `Enjoy The Services`,
+            text: `${data.msg}`,
+            footer: '<a href="/register">Go To Register!</a>',
+          });
           setTimeout(() => {
             this.router.navigate(['/login']);
           }, 2000);
         } else {
-          alert(data.msg);
+          this.isloading = false;
+          Swal.fire({
+            icon: 'error',
+            title: `${data.msg}`,
+            text: `${data.msg}`,
+          });
         }
       });
     }

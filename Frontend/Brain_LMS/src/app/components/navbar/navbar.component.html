@@ -1,6 +1,6 @@
 <div class="bg-bc6c25 p-4 shadow-lg">
   <div class="flex items-center justify-between">
-    <div class="text-amber-950 font-bold text-xl w-1/12">
+    <div class="text-white font-bold text-xl w-1/12">
       <img
         class="cursor-pointer rounded-xl hover:shadow-xl"
         src="../../../assets/BORCELLE (1).jpg"
@@ -25,40 +25,40 @@
       <a
         *ngIf="toggleLogin"
         href="#"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >Courses</a
+        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+        >Home</a
       >
       <a
         *ngIf="!toggleLogin"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
         >Teach On BrainBridge</a
       >
       <a
-        *ngIf="toggleLogin"
-        href="/assignments"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
-        >Assignments</a
-      >
-      <a
         *ngIf="!toggleLogin"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
         >BrainBridge Business</a
       >
       <a
         *ngIf="toggleLogin"
         href="/dashboard"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
         >My Learnings</a
       >
       <a
         *ngIf="toggleLogin"
-        class="text-amber-950 font-bold text-xl link_hover py-1 px-1"
+        href="/dashboard"
+        class="text-white font-semibold font-sans hover:text-black text-xl link_hover py-1 px-1"
+        >Announcements</a
+      >
+      <a
+        *ngIf="toggleLogin"
+        class="text-white font-semibold font-sans cursor-pointer hover:underline text-xl py-1 px-1"
         >{{ showname }}</a
       >
 
       <button
         (click)="toggleLogin ? logout() : rigisterRoute()"
-        class="button-hover ml-6 px-4 py-2 text-l rounded font-bold"
+        class="buttoncheck ml-6 px-4 py-2 text-l rounded font-semibold font-sans"
       >
         {{ toggleLogin ? "LOGOUT" : "LOGIN" }}
       </button>
@@ -67,7 +67,7 @@
     <div class="md:hidden">
       <fa-icon
         [icon]="mobileMenuIcon"
-        class="text-amber-950 font-bold text-xl cursor-pointer"
+        class="text-white font-semibold font-sans hover:text-black text-xl cursor-pointer"
         (click)="toggleMobileMenu()"
       ></fa-icon>
     </div>
@@ -76,14 +76,14 @@
     <div class="flex flex-col items-end">
       <fa-icon
         [icon]="closeIcon"
-        class="text-amber-950 font-bold text-xl cursor-pointer mb-4"
+        class="text-white font-bold text-xl cursor-pointer mb-4"
         (click)="closeMobileMenu()"
       ></fa-icon>
-      <a href="/" class="text-amber-950 font-bold p-2">Courses</a>
-      <a href="/homepage" class="text-amber-950 font-bold p-2">Home</a>
-      <a href="/dashboard" class="text-amber-950 font-bold p-2">Dashboard</a>
-      <a href="/login" class="text-amber-950 font-bold p-2">Login</a>
-      <a href="/assignment" class="text-amber-950 font-bold p-2">Assignments</a>
+      <a href="/" class="text-white font-bold p-2">Enrolments</a>
+      <a href="/homepage" class="text-white font-bold p-2">Home</a>
+      <a href="/dashboard" class="text-white font-bold p-2">Dashboard</a>
+      <a href="/login" class="text-white font-bold p-2">Login</a>
+      <a href="/assignment" class="text-white font-bold p-2">Assignments</a>
     </div>
   </div>
 </div>

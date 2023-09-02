@@ -1,20 +1,30 @@
 .bg-bc6c25 {
-  background-color: #ffffff;
+  background-color: #264653;
 }
 .link_hover:hover {
-  outline: 1px solid black;
+  outline: 1px solid #fefae0;
   border-radius: 5px;
-  background-color: #f8edeb;
+  background-color: #fefae0;
   transition: ease-in-out 0.3s;
 }
 .button-hover {
-  border: 1px solid red;
-  color: #b71c1c;
+  outline: #fefae0;
+  color: white;
 }
 .button-hover:hover {
-  outline: 1px solid red;
-  background-color: #ffcdd2;
-  color: #b71c1c;
+  background-color: #023047;
+  outline: white;
+  color: white;
+}
+.buttoncheck {
+  background-color: #fefae0;
+  color: black;
+  outline: 1px solid #023047;
+}
+.buttoncheck:hover {
+  background-color: #023047;
+  color: white;
+  outline: 1px solid white;
 }
 .common-border {
   border: 1px solid black;

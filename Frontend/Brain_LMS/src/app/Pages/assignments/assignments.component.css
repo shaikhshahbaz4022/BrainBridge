@@ -1,7 +1,26 @@
-.button_pink:hover {
+/* .button_pink:hover {
   background-color: white;
   outline: 1px solid black;
   color: black;
   font-weight: 800;
   font-size: medium;
+}
+.grayy {
+  background-color: #023047;
+} */
+.button_pink:hover {
+  background-color: #f8f9fa;
+  outline: 2px solid #023047;
+  color: #023047;
+  font-weight: bold;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  transition: 0.2s ease-in-out;
+}
+.grayy {
+  background-color: #023047;
+  color: white;
+}
+.dullwhite {
+  background-color: #f8f9fa;
 }
