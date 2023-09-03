@@ -1,0 +1,80 @@
+<app-navbar></app-navbar>
+<div class="flex justify-center items-start">
+  <app-loading [isloading]="isloading"></app-loading>
+</div>
+<div class="py-12">
+  <div class="max-w-9xl mx-auto sm:px-6 xl:px-8">
+    <div wire:id="hwvS9NtfSfwyQnmpb0IX" class="my-2" *ngFor="let item of dataa">
+      <div class="bg-white shadow overflow-hidden sm:rounded-md cursor-pointer">
+        <ul role="list" class="divide-y divide-y-gray-200">
+          <li class="border-l-8 border-l-gray-700" (click)="HandleClick(item)">
+            <a class="block hover:bg-gray-50">
+              <div class="flex items-center px-4 py-4 sm:px-6">
+                <div class="min-w-0 flex-1 flex items-center">
+                  <div class="flex-shrink-0">
+                    <img
+                      class="h-12 w-12 rounded-full"
+                      src="https://ui-avatars.com/api/?name=S+O&amp;color=7F9CF5&amp;background=EBF4FF"
+                      alt="Sibin O"
+                    />
+                  </div>
+                  <div
+                    class="min-w-0 flex-1 px-4 md:grid md:grid-cols-2 md:gap-4"
+                  >
+                    <div>
+                      <p class="text-xl font-medium truncate">
+                        {{ item.title }}
+                      </p>
+                      <p class="mt-2 flex items-center text-xl text-gray-500">
+                        <span class="truncate">{{ item.instructor_name }}</span>
+                      </p>
+                    </div>
+                    <div class="hidden md:block">
+                      <div>
+                        <p class="text-xl text-gray-900">
+                          {{ item.announcement_date | date : "medium" }}
+                        </p>
+                        <p class="mt-2 flex items-center text-xl text-gray-500">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke-width="1.5"
+                            stroke="currentColor"
+                            class="w-6 h-6 mr-2"
+                          >
+                            <path
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"
+                            ></path>
+                          </svg>
+                          {{ item.course_name }}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div>
+                  <svg
+                    class="h-5 w-5 text-gray-400"
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 20 20"
+                    fill="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

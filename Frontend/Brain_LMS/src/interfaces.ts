@@ -92,3 +92,12 @@ export interface SubmissionGet {
   submission_link: string;
   submission_date: string;
 }
+
+export interface AnnouncementUser {
+  announcement_id: number;
+  title: string;
+  content: string;
+  instructor_name: string;
+  course_name: string;
+  announcement_date: Date;
+}
