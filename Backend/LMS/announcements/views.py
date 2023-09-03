@@ -42,6 +42,6 @@ def GetAnnouncements(req):
                     "announcement_date": ann.announcement_date
                 }
                 arr.append(obj)
-        return JsonResponse({"data": obj})
+        return JsonResponse({"data": arr})
     else:
         return JsonResponse({"msg": "Invalid request"}, status=405)
