@@ -94,8 +94,12 @@ def getInstructorCourse(req):
 
 def getChatResponse(req):
     if req.method == "GET":
+        str = ""
         courses = Course.objects.all()
-        listing = {"data": list(courses.values())}
-        return JsonResponse(listing)
+
+        for item in courses:
+            str += f"title:{item.title},description :{item.description}"
+
+        return JsonResponse({"data": str})
     else:
         return JsonResponse({"msg": 'Invalid Request'})
