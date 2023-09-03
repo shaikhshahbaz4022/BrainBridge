@@ -65,6 +65,7 @@ export class NavbarComponent implements OnInit {
 
     setTimeout(() => {
       this.router.navigate(['/homepage']);
+      window.location.reload();
     }, 2000);
   }
 }
