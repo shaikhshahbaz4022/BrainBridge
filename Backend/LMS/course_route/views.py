@@ -88,3 +88,14 @@ def getInstructorCourse(req):
         return JsonResponse(listing)
     else:
         return JsonResponse({"msg": "Invalid Request"}, status=405)
+
+# Route for ChatBot with OpenAI
+
+
+def getChatResponse(req):
+    if req.method == "GET":
+        courses = Course.objects.all()
+        listing = {"data": list(courses.values())}
+        return JsonResponse(listing)
+    else:
+        return JsonResponse({"msg": 'Invalid Request'})
