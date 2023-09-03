@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 export class AuthService {
   url = `http://localhost:8000/user`;
   constructor(private http: HttpClient) {}
+
   registerfun(user: User): Observable<any> {
     return this.http.post<User>(`${this.url}/register`, user);
   }

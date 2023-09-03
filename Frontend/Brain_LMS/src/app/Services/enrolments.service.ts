@@ -1,4 +1,4 @@
-import { AssignmentSubmit } from './../../interfaces';
+import { AnnouncementUser, AssignmentSubmit } from './../../interfaces';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
@@ -55,5 +55,14 @@ export class EnrolmentsService {
     return this.http.post<AssignmentSubmit>(`${submitUrl}/submit/${id}`, obj, {
       headers,
     });
+  }
+  //get announcements service
+
+  getUserAnnouncement(): Observable<{ data: AnnouncementUser[] }> {
+    const geturl = `http://localhost:8000/announcement/get`;
+    let headers = {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    };
+    return this.http.get<{ data: AnnouncementUser[] }>(geturl, { headers });
   }
 }

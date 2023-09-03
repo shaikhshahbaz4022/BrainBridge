@@ -24,6 +24,8 @@ import { InstructordashboardComponent } from './Pages/instructordashboard/instru
 import { InstrNavbarComponent } from './components/instr-navbar/instr-navbar.component';
 import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.component';
 import { SubmissionsComponent } from './Pages/submissions/submissions.component';
+import { AnnouncementComponent } from './Pages/announcement/announcement.component';
+import { ParticularAnnounceComponent } from './Pages/particular-announce/particular-announce.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,8 @@ import { SubmissionsComponent } from './Pages/submissions/submissions.component'
     InstrNavbarComponent,
     InstructorassiComponent,
     SubmissionsComponent,
+    AnnouncementComponent,
+    ParticularAnnounceComponent,
   ],
   imports: [
     BrowserModule,

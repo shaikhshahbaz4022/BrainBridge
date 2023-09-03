@@ -10,6 +10,8 @@ import { InstructordashboardComponent } from './Pages/instructordashboard/instru
 import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.component';
 import { SubmissionsComponent } from './Pages/submissions/submissions.component';
 import { CreateCourseComponent } from './components/create-course/create-course.component';
+import { AnnouncementComponent } from './Pages/announcement/announcement.component';
+import { ParticularAnnounceComponent } from './Pages/particular-announce/particular-announce.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' },
@@ -23,6 +25,8 @@ const routes: Routes = [
   { path: 'intructorassignment', component: InstructorassiComponent },
   { path: 'submissions', component: SubmissionsComponent },
   { path: 'createcourse', component: CreateCourseComponent },
+  { path: 'announcement', component: AnnouncementComponent },
+  { path: 'announcementper', component: ParticularAnnounceComponent },
 ];
 
 @NgModule({
