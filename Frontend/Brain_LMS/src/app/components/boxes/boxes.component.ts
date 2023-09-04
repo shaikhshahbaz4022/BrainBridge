@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-boxes',
@@ -104,6 +105,6 @@ export class BoxesComponent implements OnInit {
   ];
 
   sentmessage() {
-    return alert('Please Login To Enroll');
+    Swal.fire('Please Login ', 'To Enroll Courses ', 'question');
   }
 }

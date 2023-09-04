@@ -26,6 +26,7 @@ import { InstructorassiComponent } from './Pages/instructorassi/instructorassi.c
 import { SubmissionsComponent } from './Pages/submissions/submissions.component';
 import { AnnouncementComponent } from './Pages/announcement/announcement.component';
 import { ParticularAnnounceComponent } from './Pages/particular-announce/particular-announce.component';
+import { AnnounceCreateComponent } from './components/announce-create/announce-create.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,6 +50,7 @@ import { ParticularAnnounceComponent } from './Pages/particular-announce/particu
     SubmissionsComponent,
     AnnouncementComponent,
     ParticularAnnounceComponent,
+    AnnounceCreateComponent,
   ],
   imports: [
     BrowserModule,
