@@ -101,3 +101,12 @@ export interface AnnouncementUser {
   course_name: string;
   announcement_date: Date;
 }
+export interface createAssignInter {
+  title: string;
+  description: string;
+  due_date: string;
+}
+export interface createAnnounInter {
+  title: string;
+  content: string;
+}

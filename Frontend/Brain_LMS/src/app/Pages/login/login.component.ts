@@ -42,9 +42,11 @@ export class LoginComponent implements OnInit {
           this.isloading = false;
           Swal.fire({
             icon: 'success',
-            title: `Enjoy The Services`,
+            title: `Login Succesfully`,
             text: `${data.msg}`,
-            footer: '<a href="/register">Go To Register!</a>',
+            html: `<h1>${data.user.role}</h1>`,
+            background: `yello`,
+            iconColor: 'green',
           });
           setTimeout(() => {
             if (data.user.role == 'student') {

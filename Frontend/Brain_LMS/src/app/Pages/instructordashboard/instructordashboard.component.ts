@@ -20,9 +20,9 @@ export class InstructordashboardComponent implements OnInit {
     private router: Router
   ) {}
   getcourseIntru() {
-    this.instructorService.getInstCourses().subscribe((data: any) => {
-      this.data = data.data;
-      console.log(data);
+    this.instructorService.getInstCourses().subscribe((res: any) => {
+      this.data = res.data;
+      console.log(res);
       this.isloading = false;
     });
   }

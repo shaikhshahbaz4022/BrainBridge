@@ -12,6 +12,7 @@ import { SubmissionsComponent } from './Pages/submissions/submissions.component'
 import { CreateCourseComponent } from './components/create-course/create-course.component';
 import { AnnouncementComponent } from './Pages/announcement/announcement.component';
 import { ParticularAnnounceComponent } from './Pages/particular-announce/particular-announce.component';
+import { AnnounceCreateComponent } from './components/announce-create/announce-create.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'homepage' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'createcourse', component: CreateCourseComponent },
   { path: 'announcement', component: AnnouncementComponent },
   { path: 'announcementper', component: ParticularAnnounceComponent },
+  { path: 'anouncecreate', component: AnnounceCreateComponent },
 ];
 
 @NgModule({

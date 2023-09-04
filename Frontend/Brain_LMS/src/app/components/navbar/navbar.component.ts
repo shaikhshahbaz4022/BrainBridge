@@ -52,8 +52,7 @@ export class NavbarComponent implements OnInit {
     }
   }
   logout(): void {
-    localStorage.removeItem('user');
-    localStorage.removeItem('token');
+    localStorage.clear();
     this.showname = '';
     this.toggleLogin = false;
     this.cdref.detectChanges();
@@ -65,7 +64,9 @@ export class NavbarComponent implements OnInit {
 
     setTimeout(() => {
       this.router.navigate(['/homepage']);
-      window.location.reload();
     }, 2000);
+    setTimeout(() => {
+      window.location.reload();
+    }, 3000);
   }
 }

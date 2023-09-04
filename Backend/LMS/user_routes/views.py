@@ -74,6 +74,14 @@ def Logout(req):
 #     else:
 #         return JsonResponse({"msg": "Login first"})
 
+def allusers(req):
+    if req.method == "GET":
+        allusersget = User.objects.all()
+        listing = {"data": list(allusersget.values())}
+        return JsonResponse(listing)
+    else:
+        return JsonResponse({"msg": "Invalid Request"}, status=405)
+
 
 def homeroute(req):
     return JsonResponse({"msg": "Welcome To Our Platform"})

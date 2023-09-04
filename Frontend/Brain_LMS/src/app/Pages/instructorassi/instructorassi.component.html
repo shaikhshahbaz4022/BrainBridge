@@ -6,6 +6,118 @@
 <br />
 <br />
 <br />
+<div class="flex justify-center items-center">
+  <button
+    *ngIf="!isloading"
+    id="toggleformbutton"
+    (click)="toggleform()"
+    class="button_pink grayy py-2 px-4 text-xl font-medium rounded-sm mx-2"
+  >
+    Create Assignment
+  </button>
+  <button
+    *ngIf="!isloading"
+    id="toggleformbuttonannounce"
+    (click)="toggleformannounce()"
+    class="button_pink grayy py-2 px-4 text-xl font-medium rounded-sm mx-2"
+  >
+    Create Announcement
+  </button>
+</div>
+<section *ngIf="showform">
+  <div class="w-full max-w-md mx-auto mt-10 p-6 rounded-md shadow-md bg-white">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">Create Task</h1>
+    <form [formGroup]="createassigroup" (click)="createAssignment()">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="title"
+          >Title:</label
+        >
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="title"
+          type="text"
+          placeholder="Enter title"
+          formControlName="title"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="description"
+          >Description:</label
+        >
+        <textarea
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="description"
+          placeholder="Enter description"
+          formControlName="description"
+        ></textarea>
+      </div>
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="endDate"
+          >End Date:</label
+        >
+        <input
+          formControlName="due_date"
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="endDate"
+          type="datetime-local"
+        />
+      </div>
+      <div class="flex items-center justify-center mt-6">
+        <button
+          class="grayy button_pink hover:bg-grayy text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Create Task
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<section *ngIf="showformAnnounce">
+  <div class="w-full max-w-md mx-auto mt-10 p-6 rounded-md shadow-md bg-white">
+    <h1 class="text-2xl font-bold text-gray-800 mb-6">Create Task</h1>
+    <form [formGroup]="announcementGroup" (click)="createAnnouncement()">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-sm font-bold mb-2" for="title"
+          >Title:</label
+        >
+        <input
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="title"
+          type="text"
+          placeholder="Enter title"
+          formControlName="title"
+        />
+      </div>
+      <div class="mb-4">
+        <label
+          class="block text-gray-700 text-sm font-bold mb-2"
+          for="description"
+          >Content:</label
+        >
+        <textarea
+          class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+          id="Content"
+          placeholder="Enter Content"
+          formControlName="content"
+        ></textarea>
+      </div>
+
+      <div class="flex items-center justify-center mt-6">
+        <button
+          class="grayy button_pink hover:bg-grayy text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline"
+          type="submit"
+        >
+          Add Announcement
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
 <section class="mt-5">
   <div class="mx-6">
     <div
@@ -13,18 +125,18 @@
     >
       <div
         *ngFor="let item of data"
-        class="hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
+        class="dullwhite hover:shadow-lg py-6 px-3 rounded-xl shadow-md border 1px solid black cursor-pointer"
       >
-        <h3 class="my-2 text-xl text-indigo-950 underline font-semibold">
+        <h3 class="my-2 text-2xl text-indigo-950 underline font-semibold">
           {{ item.title }}
         </h3>
         <hr />
         <h3 class="my-2 text-lg font-semibold">
-          StartDate : {{ item.start_date }}
+          StartDate : {{ item.start_date | date : "medium" }}
         </h3>
         <hr />
         <h3 class="my-2 text-lg font-semibold">
-          EndDate : {{ item.due_date }}
+          EndDate : {{ item.due_date | date : "medium" }}
         </h3>
         <hr />
         <p class="my-2 text-lg font-bold">

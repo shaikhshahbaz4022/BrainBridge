@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CourseService } from 'src/app/Services/course.service';
 import { EnrolmentsService } from 'src/app/Services/enrolments.service';
 import { CourseData } from 'src/interfaces';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-allcourses',
@@ -28,7 +29,7 @@ export class AllcoursesComponent implements OnInit {
   CreateEnrolmanet(id: number) {
     this.enrolService.userEnrollment(id).subscribe((data) => {
       console.log(data);
-      alert(data.msg);
+      Swal.fire('Already Enrolled', 'Checkout Other Courses !!', 'question');
     });
   }
 }
