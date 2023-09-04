@@ -69,4 +69,7 @@ export class NavbarComponent implements OnInit {
       window.location.reload();
     }, 3000);
   }
+  redirecthome() {
+    this.router.navigate(['/homepage']);
+  }
 }

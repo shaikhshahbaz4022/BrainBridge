@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  url = `http://localhost:8000/user`;
+  private url = `http://localhost:8000/user`;
   constructor(private http: HttpClient) {}
 
   registerfun(user: User): Observable<any> {
@@ -14,5 +14,10 @@ export class AuthService {
   }
   loginfun(user: LoginUser): Observable<any> {
     return this.http.post<LoginUser>(`${this.url}/login`, user);
+  }
+
+  defualtRenderOn(): Observable<any> {
+    const runurl = `http://localhost:8000/user/home`;
+    return this.http.get<any>(runurl);
   }
 }
