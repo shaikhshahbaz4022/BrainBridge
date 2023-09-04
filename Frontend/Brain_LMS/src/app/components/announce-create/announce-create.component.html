@@ -1,1 +1,43 @@
-<p>announce-create works!</p>
+<div class="fixed right-8 bottom-8" (click)="toggleChat()">
+  <button
+    class="text-lg button_pink grayy text-white font-bold py-2 px-4 rounded-full shadow-lg"
+  >
+    Chat
+    <fa-icon [icon]="chat"></fa-icon>
+  </button>
+</div>
+<div
+  *ngIf="showChat"
+  class="fixed bottom-20 right-0 h-96 w-72 p-4 bg-white border border-gray-300 rounded-t-lg shadow-lg overflow-y-auto"
+>
+  <!-- Chat messages -->
+  <div class="flex flex-col space-y-2" #chatMessages>
+    <div
+      *ngFor="let message of dataaa"
+      class="max-w-md p-2 rounded-lg"
+      [ngClass]="{
+        'self-start bg-gray-200': message.sender === 'user',
+        'self-end bg-blue-500 text-white': message.sender === 'bot'
+      }"
+    >
+      {{ message.text }}
+    </div>
+  </div>
+
+  <!-- User input -->
+  <div class="flex absolute bottom-2 space-x-2 items-end">
+    <!-- Change to items-end -->
+    <input
+      [(ngModel)]="userMessage"
+      (keyup.enter)="sendMessage()"
+      class="flex-1 p-2 border rounded-lg"
+      placeholder="Type your message..."
+    />
+    <button
+      (click)="sendMessage()"
+      class="button_pink grayy text-white font-bold py-2 px-4 rounded-lg shadow"
+    >
+      Send
+    </button>
+  </div>
+</div>

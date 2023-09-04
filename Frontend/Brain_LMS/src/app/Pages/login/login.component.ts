@@ -14,11 +14,14 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private authservice: AuthService
   ) {
     this.loginCall();
   }
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.startRender();
+  }
   logingroup!: FormGroup;
   isloading!: boolean;
 
@@ -65,5 +68,10 @@ export class LoginComponent implements OnInit {
         }
       });
     }
+  }
+  startRender() {
+    this.authservice.defualtRenderOn().subscribe((res) => {
+      console.log(res);
+    });
   }
 }

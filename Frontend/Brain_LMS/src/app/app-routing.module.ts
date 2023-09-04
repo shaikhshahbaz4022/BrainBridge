@@ -1,3 +1,4 @@
+import { authGuardGuard } from './Guard/auth-guard.guard';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './Pages/home-page/home-page.component';
@@ -19,15 +20,39 @@ const routes: Routes = [
   { path: 'homepage', component: HomePageComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard', component: DashboardComponent },
-  { path: 'assignments', component: AssignmentsComponent },
-  { path: 'perticular', component: PerticularComponent },
+  {
+    path: 'dashboard',
+    canActivate: [authGuardGuard],
+    component: DashboardComponent,
+  },
+  {
+    path: 'assignments',
+    canActivate: [authGuardGuard],
+    component: AssignmentsComponent,
+  },
+  {
+    path: 'perticular',
+    canActivate: [authGuardGuard],
+    component: PerticularComponent,
+  },
   { path: 'instructordashboard', component: InstructordashboardComponent },
   { path: 'intructorassignment', component: InstructorassiComponent },
-  { path: 'submissions', component: SubmissionsComponent },
+  {
+    path: 'submissions',
+    canActivate: [authGuardGuard],
+    component: SubmissionsComponent,
+  },
   { path: 'createcourse', component: CreateCourseComponent },
-  { path: 'announcement', component: AnnouncementComponent },
-  { path: 'announcementper', component: ParticularAnnounceComponent },
+  {
+    path: 'announcement',
+    canActivate: [authGuardGuard],
+    component: AnnouncementComponent,
+  },
+  {
+    path: 'announcementper',
+    canActivate: [authGuardGuard],
+    component: ParticularAnnounceComponent,
+  },
   { path: 'anouncecreate', component: AnnounceCreateComponent },
 ];
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthService } from 'src/app/Services/auth.service';
 
 @Component({
   selector: 'app-home-page',
@@ -6,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home-page.component.css'],
 })
 export class HomePageComponent implements OnInit {
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private authservice: AuthService) {}
+  ngOnInit(): void {
+    this.startRender();
+  }
+  startRender() {
+    this.authservice.defualtRenderOn().subscribe((res) => {
+      console.log(res);
+    });
+  }
 }
