@@ -9,7 +9,7 @@ import { Enrolmentdata, assignInter } from 'src/interfaces';
 })
 export class EnrolmentsService {
   constructor(private http: HttpClient) {}
-  appurl = `http://localhost:8000/enrol`;
+  appurl = `https://brainbridge.onrender.com/enrol`;
   userEnrollment(id: number): Observable<any> {
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
@@ -27,7 +27,7 @@ export class EnrolmentsService {
   }
   //get all assignments
   getAssignmentsall(): Observable<{ data: assignInter[] }> {
-    const assignURL = `http://localhost:8000/assignment/getassign`;
+    const assignURL = `https://brainbridge.onrender.com/assignment/getassign`;
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
@@ -36,7 +36,7 @@ export class EnrolmentsService {
 
   //get perticular Assignment
   getperticularAssi(): Observable<{ data: assignInter }> {
-    const assignURL = `http://localhost:8000/assignment/getbyid`;
+    const assignURL = `https://brainbridge.onrender.com/assignment/getbyid`;
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
@@ -46,7 +46,7 @@ export class EnrolmentsService {
     });
   }
   submitAssignment(obj: any, id: any): Observable<any> {
-    const submitUrl = `http://localhost:8000/sub`;
+    const submitUrl = `https://brainbridge.onrender.com/sub`;
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
@@ -59,7 +59,7 @@ export class EnrolmentsService {
   //get announcements service
 
   getUserAnnouncement(): Observable<{ data: AnnouncementUser[] }> {
-    const geturl = `http://localhost:8000/announcement/get`;
+    const geturl = `https://brainbridge.onrender.com/announcement/get`;
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
     };
