@@ -13,7 +13,7 @@ import {
   providedIn: 'root',
 })
 export class InstructorserviceService {
-  appurl: string = `http://localhost:8000`;
+  private appurl: string = `https://brainbridge.onrender.com`;
   constructor(private http: HttpClient) {}
   token = localStorage.getItem('token') || '';
 
@@ -50,7 +50,7 @@ export class InstructorserviceService {
     let headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
-    let createurl = `http://localhost:8000/assignment/create/${id}`;
+    let createurl = `https://brainbridge.onrender.com/assignment/create/${id}`;
     return this.http.post<createAssignInter>(createurl, obj, { headers });
   }
 
@@ -60,7 +60,7 @@ export class InstructorserviceService {
     let headers = new HttpHeaders({
       Authorization: `Bearer ${this.token}`,
     });
-    let announceurl = `http://localhost:8000/announcement/create/${id}`;
+    let announceurl = `https://brainbridge.onrender.com/announcement/create/${id}`;
     return this.http.post<createAnnounInter>(announceurl, obj, { headers });
   }
 }

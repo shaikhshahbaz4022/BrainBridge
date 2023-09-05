@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root',
 })
 export class AuthService {
-  private url = `http://localhost:8000/user`;
+  url = `https://brainbridge.onrender.com/user`;
   constructor(private http: HttpClient) {}
   private urlhereChat: string = `https://chatbot-with-openai.onrender.com`;
   registerfun(user: User): Observable<any> {
@@ -17,7 +17,7 @@ export class AuthService {
   }
 
   defualtRenderOn(): Observable<any> {
-    const runurl = `http://localhost:8000/user/home`;
+    const runurl = `https://brainbridge.onrender.com/user/home`;
     return this.http.get<any>(runurl);
   }
   chatbotResponse(userrequest: any): Observable<any> {

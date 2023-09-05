@@ -1,17 +1,83 @@
+# BrainBridge - A Learning Management System
+
+<hr/>
+
 <h1 style="display:flex;justify-content:center;font-weight:bold">BrainBridge  </h1>
 <span style="display:flex;justify-content:center;font-weight:bold">Learning Management System</span>
 
+<hr/>
+
 <div style="display:flex;justify-content:center">
 
-<img src="https://github.com/shaikhshahbaz4022/BrainBridge/assets/119395145/8ac6a65d-2a29-448e-a0fe-45a1e862efea" alt="error">
+<img style="border-radius:50%" src="./Frontend/Brain_LMS/src/assets/BORCELLE.gif" alt="error">
 </div>
 
 <hr/>
 
-# Brain Bridge
+## Entity Relation Diagram (PostgresSQL)
 
-## WARNING: Unauthorized cloning, usage, or reproduction of this code is strictly prohibited, and permission for such actions is not granted.
+<div style="display:flex;justify-content:center">
+
+<img src="./Frontend/Brain_LMS/src/assets/BrainBridge (1).png" alt="error">
+</div>
+<hr/>
+
+Welcome to BrainBridge, your gateway to a modern and efficient Learning Management System. 🚀
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Features](#features)
+- [Technology Stack](#technology-stack)
+- [Deployment](#deployment)
+- [Learning Journey](#learning-journey)
+- [Getting Started](#getting-started)
+- [License](#license)
+
+## Introduction
+
+BrainBridge is more than just a Learning Management System; it's a dynamic educational platform that bridges the gap between students and instructors. With the power of AI and a stack of technologies learned within 30 days, we've crafted a solution that takes your learning experience to the next level.
+
+## Features
+
+- **AI-Powered Chatbot:** BrainBridge integrates AI, thanks to OpenAI functions, to provide a personalized learning experience. Our chatbot understands your queries and guides you through your courses.
+
+- **Student-Centric:** Students can easily register and enroll in multiple courses. No more cumbersome processes. It's just a few clicks to get started on your learning journey.
+
+- **Seamless Assignment Management:** Submit assignments with ease and view all your assignments in one place. Instructors can create assignments effortlessly, making learning a breeze.
+
+- **Announcements:** Stay updated with course announcements. Instructors can communicate important information with ease, ensuring that you never miss a beat.
+
+- **Empowered Instructors:** Instructors have the tools they need to create and manage multiple courses, assignments, and announcements, all within one platform.
+
+## Technology Stack
+
+Our journey to create BrainBridge involved diving into new technologies, all thanks to Generative AI and prompt engineering:
+
+- **Backend:** Python and Django - Leveraging the power of Python and Django for a robust and secure backend.
+
+- **Frontend:** Angular and TypeScript - Crafting a responsive and intuitive frontend using Angular and TypeScript.
+
+- **Database:** PostgreSQL - Ensuring data reliability and performance.
+
+- **Deployment:** We chose Render for backend deployment and Node.js for the AI-powered chatbot, which is also deployed on Render.
+
+## Learning Journey
+
+One of the remarkable aspects of BrainBridge is that we embraced a rapid learning curve. We mastered Django, Angular, and various technologies within 30 days, all thanks to the incredible capabilities of Generative AI. This project is a testament to the power of continuous learning and innovation.
+
+## Getting Started
+
+Ready to experience the future of learning? Follow these simple steps:
+
+1. **Backend Setup:** Navigate to the backend folder and follow the setup instructions in the README.md.
+
+2. **Frontend Setup:** Head over to the frontend folder and follow the instructions in the README.md.
+
+3. **Launch BrainBridge:** Run the app, and start exploring the world of enhanced learning.
 
 ## License
 
-### THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+BrainBridge is open-source and available under the MIT License. Feel free to use, modify, and share it.
+
+Let's transform education together! 📚🌟

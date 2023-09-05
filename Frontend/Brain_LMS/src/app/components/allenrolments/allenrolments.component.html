@@ -1,7 +1,9 @@
 <div class="flex justify-center items-start">
   <app-loading [isloading]="isloading"></app-loading>
 </div>
-
+<div *ngIf="showEmpty" class="flex justify-center">
+  <img class="w-2/4" [src]="emptyimage" alt="Error Image" />
+</div>
 <div *ngIf="!isloading">
   <div class="mx-9 my-7">
     <h1 class="text-xl">Courses ></h1>

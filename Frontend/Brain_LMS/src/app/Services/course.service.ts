@@ -7,7 +7,7 @@ import { CourseData, Create_Course, data } from 'src/interfaces';
   providedIn: 'root',
 })
 export class CourseService {
-  private url = `http://localhost:8000/course`;
+  private url = `https://brainbridge.onrender.com/course`;
   constructor(private http: HttpClient) {}
   userData: any = JSON.parse(localStorage.getItem('user') || '{}');
   id: number = this.userData.id;
