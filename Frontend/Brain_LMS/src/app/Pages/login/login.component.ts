@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
   ngOnInit(): void {
     this.startRender();
+    this.startRenderforChatBot();
   }
   logingroup!: FormGroup;
   isloading!: boolean;
@@ -72,6 +73,12 @@ export class LoginComponent implements OnInit {
   startRender() {
     this.authservice.defualtRenderOn().subscribe((res) => {
       console.log(res);
+    });
+  }
+  startRenderforChatBot() {
+    this.authService.defaultchatbotStart().subscribe((res) => {
+      console.log('render Started for Chatbot');
+      console.log(res.msg);
     });
   }
 }

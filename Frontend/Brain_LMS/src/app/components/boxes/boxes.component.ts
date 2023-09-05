@@ -1,5 +1,6 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { faAngleRight, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/Services/auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -8,15 +9,24 @@ import Swal from 'sweetalert2';
   styleUrls: ['./boxes.component.css'],
 })
 export class BoxesComponent implements OnInit {
-  constructor(private cdRef: ChangeDetectorRef) {}
+  constructor(
+    private cdRef: ChangeDetectorRef,
+    private authservice: AuthService
+  ) {}
   right = faAngleRight;
   buttonArrayRight = faArrowRight;
 
   data: any;
   ngOnInit(): void {
     this.loadData();
+    this.startRenderforChatBot();
   }
-
+  startRenderforChatBot() {
+    this.authservice.defaultchatbotStart().subscribe((res) => {
+      console.log('render Started for Chatbot');
+      console.log(res.msg);
+    });
+  }
   loadData(): void {
     this.data = this.data = localStorage.getItem('token') || null;
     this.cdRef.detectChanges();
