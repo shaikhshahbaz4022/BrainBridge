@@ -9,17 +9,9 @@
 
 <div style="display:flex;justify-content:center">
 
-<img style="border-radius:50%" src="./Frontend/Brain_LMS/src/assets/BORCELLE.gif" alt="error">
+<img  src="./Frontend/Brain_LMS/src/assets/BORCELLE (1).jpg" alt="error">
 </div>
 
-<hr/>
-
-## Entity Relation Diagram (PostgresSQL)
-
-<div style="display:flex;justify-content:center">
-
-<img src="./Frontend/Brain_LMS/src/assets/BrainBridge (1).png" alt="error">
-</div>
 <hr/>
 
 Welcome to BrainBridge, your gateway to a modern and efficient Learning Management System. 🚀
@@ -37,6 +29,14 @@ Welcome to BrainBridge, your gateway to a modern and efficient Learning Manageme
 ## Introduction
 
 BrainBridge is more than just a Learning Management System; it's a dynamic educational platform that bridges the gap between students and instructors. With the power of AI and a stack of technologies learned within 30 days, we've crafted a solution that takes your learning experience to the next level.
+
+## Entity Relation Diagram (PostgresSQL)
+
+<div style="display:flex;justify-content:center">
+
+<img src="./Frontend/Brain_LMS/src/assets/BrainBridge (1).png" alt="error">
+</div>
+<hr/>
 
 ## Features
 
