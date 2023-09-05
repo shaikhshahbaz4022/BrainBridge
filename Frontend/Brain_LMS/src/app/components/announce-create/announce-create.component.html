@@ -8,30 +8,29 @@
 </div>
 <div
   *ngIf="showChat"
-  class="fixed bottom-20 right-0 h-96 w-72 p-4 bg-white border border-gray-300 rounded-t-lg shadow-lg overflow-y-auto"
+  class="fixed bottom-20 right-0 h-96 w-96 p-4 col border border-gray-300 rounded-t-lg shadow-lg"
 >
-  <!-- Chat messages -->
-  <div class="flex flex-col space-y-2" #chatMessages>
+  <div class="flex flex-col space-y-2 h-72 overflow-y-auto">
     <div
-      *ngFor="let message of dataaa"
+      *ngFor="let message of chatMessages"
       class="max-w-md p-2 rounded-lg"
+      #chatMessagesRef
       [ngClass]="{
         'self-start bg-gray-200': message.sender === 'user',
-        'self-end bg-blue-500 text-white': message.sender === 'bot'
+        'self-end grayy text-white': message.sender === 'bot'
       }"
     >
       {{ message.text }}
     </div>
   </div>
 
-  <!-- User input -->
-  <div class="flex absolute bottom-2 space-x-2 items-end">
-    <!-- Change to items-end -->
+  <div class="flex space-x-2">
     <input
       [(ngModel)]="userMessage"
       (keyup.enter)="sendMessage()"
       class="flex-1 p-2 border rounded-lg"
       placeholder="Type your message..."
+      name="chatbot here"
     />
     <button
       (click)="sendMessage()"

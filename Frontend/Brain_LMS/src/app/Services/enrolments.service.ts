@@ -45,7 +45,7 @@ export class EnrolmentsService {
       headers,
     });
   }
-  submitAssignment(obj: any, id: any): Observable<AssignmentSubmit> {
+  submitAssignment(obj: any, id: any): Observable<any> {
     const submitUrl = `http://localhost:8000/sub`;
     let headers = {
       Authorization: `Bearer ${localStorage.getItem('token')}`,
