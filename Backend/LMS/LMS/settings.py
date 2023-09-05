@@ -39,13 +39,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "corsheaders",
     "user_routes",
     'course_route',
     "enrol_routes",
     "assignment_routes",
     "submission_routes",
-    'announcements'
+    'announcements',
+    "corsheaders",
 
 
 ]
