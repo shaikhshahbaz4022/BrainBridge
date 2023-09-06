@@ -29,7 +29,14 @@ export class AllcoursesComponent implements OnInit {
   CreateEnrolmanet(id: number) {
     this.enrolService.userEnrollment(id).subscribe((data) => {
       console.log(data);
-      Swal.fire('Already Enrolled', 'Checkout Other Courses !!', 'question');
+      if (data.msg == 'Enrollment Added Succesfully') {
+        Swal.fire({
+          title: data.msg,
+          text: 'Succesfully Enrolled',
+        });
+      } else {
+        Swal.fire('Already Enrolled', 'Checkout Other Courses !!', 'question');
+      }
     });
   }
 }
